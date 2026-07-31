@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Básico -->
+    <title>wevitria | Digital Engineering, AI Solutions & Robotic Process Automation (RPA)</title>
+    <meta name="description" content="Soluções inteligentes em Engenharia de Custos, Planejamento, Automação de Processos e Inteligência Artificial Corporativa para resultados precisos.">
+    <meta name="keywords" content="Engenharia de Custos, Project Controls, Robotic Process Automation (RPA), Inteligência Artificial, Consultoria, Planejamento, Dashboard, ProcureFlow">
+    <meta name="author" content="WEVITRIA">
+    <link rel="canonical" href="https://wevitria.com.br">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wevitria.com.br/">
+    <meta property="og:title" content="WEVITRIA | Engenharia Digital & Processos Automatizados">
+    <meta property="og:description" content="Engenharia Inteligente para Empresas que Precisam de Resultados. Mais de 30 anos de expertise aliados à tecnologia de ponta.">
+    
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#000000', 
+                        'dark-surface': '#111111',
+                        'dark-panel': '#1a1a1a',
+                        light: '#ffffff',
+                        silver: '#d4d4d8',
+                        gold: '#d4af37',
+                        ruler: '#333333',
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Inter', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'premium': '0 4px 40px -10px rgba(0, 0, 0, 0.5)',
+                        'premium-hover': '0 10px 50px -10px rgba(212, 175, 55, 0.15)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Ícones -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Estilos Customizados -->
+    <style>
+        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        
+        /* Efeito de Dourado Esmaecendo no Texto Branco */
+        .text-gold-fade {
+            background: linear-gradient(110deg, #ffffff 15%, #d4af37 50%, #ffffff 85%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+        }
+
+        /* Fundo Degradê Principal */
+        .bg-vitria-gradient {
+            background: linear-gradient(135deg, #000000 0%, #111111 50%, #1a1a1a 100%);
+        }
+
+        /* Reveal Animation */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        
+        /* Efeito Header Transparente para Dark Blur */
+        .header-scrolled {
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .timeline-line::before {
+            content: ''; position: absolute; left: 24px; top: 0; bottom: 0; width: 1px; background: #333333; z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .timeline-line::before {
+                left: 0; right: 0; top: 24px; bottom: auto; height: 1px; width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-dark text-silver font-body selection:bg-gold selection:text-dark">
+
+    <!-- 1. Header Premium -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-4 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
+            <a href="#home" class="flex items-center gap-3 transition-transform hover:opacity-80">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" class="transition-colors duration-300">
+                    <path d="M3 3v18h18" />
+                    <path d="M3 16l5-5 4 4 8-8" />
+                    <path d="M15 7h5v5" />
+                </svg>
+                <span class="font-heading font-black text-xl tracking-widest text-white leading-none">VITRIA</span>
+            </a>
+            
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="#quem-somos" class="text-white text-sm font-medium tracking-wide hover:text-gold transition-colors">Quem Somos</a>
+                <a href="#servicos" class="text-white text-sm font-medium tracking-wide hover:text-gold transition-colors">Serviços</a>
+                <a href="#solucoes" class="text-white text-sm font-medium tracking-wide hover:text-gold transition-colors">Soluções</a>
+                <a href="#segmentos" class="text-white text-sm font-medium tracking-wide hover:text-gold transition-colors">Segmentos</a>
+                <a href="#contato" class="text-white text-sm font-medium tracking-wide hover:text-gold transition-colors">Contato</a>
+                
+                <a href="https://wa.me/5521999999999" target="_blank" class="bg-white text-dark hover:bg-gold hover:text-dark border border-white hover:border-gold text-xs font-bold uppercase tracking-wider px-6 py-2.5 rounded-sm transition-all hover:scale-105">
+                    Agendar Diagnóstico
+                </a>
+            </nav>
+            
+            <button id="mobile-menu-btn" class="lg:hidden p-2 text-white">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-dark-surface absolute top-full left-0 w-full border-t border-ruler">
+            <nav class="flex flex-col px-6 py-6 gap-4">
+                <a href="#quem-somos" class="mobile-link text-sm font-medium text-silver tracking-wide hover:text-gold">Quem Somos</a>
+                <a href="#servicos" class="mobile-link text-sm font-medium text-silver tracking-wide hover:text-gold">Serviços</a>
+                <a href="#solucoes" class="mobile-link text-sm font-medium text-silver tracking-wide hover:text-gold">Soluções</a>
+                <a href="#segmentos" class="mobile-link text-sm font-medium text-silver tracking-wide hover:text-gold">Segmentos</a>
+                <a href="#contato" class="mobile-link text-sm font-medium text-silver tracking-wide hover:text-gold">Contato</a>
+                <a href="https://wa.me/5521999999999" target="_blank" class="mt-4 bg-gold text-dark text-xs font-bold uppercase tracking-wider text-center py-3 rounded-sm">
+                    Agendar Diagnóstico
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. Hero -->
+        <section id="home" class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 min-h-[90vh] flex items-center bg-vitria-gradient overflow-hidden">
+            <div class="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:32px_32px] opacity-[0.03]"></div>
+            
+            <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    
+                    <div class="reveal">
+                        <h2 class="font-heading font-black text-sm tracking-[0.2em] text-silver/50 uppercase mb-4">
+                            Engenharia • Tecnologia • Inteligência
+                        </h2>
+                        <h1 class="font-heading font-black text-white text-4xl sm:text-5xl lg:text-6xl leading-[1.1] tracking-tight mb-8">
+                            Engenharia Inteligente para Empresas que Precisam de <span class="text-gold-fade">Resultados.</span>
+                        </h1>
+                        <p class="text-silver text-lg sm:text-xl leading-relaxed mb-10 max-w-xl font-light">
+                            Soluções de alta performance em Engenharia, Custos, Planejamento, Automatização de Processos e Inteligência Artificial para projetos industriais de grande porte.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="https://wa.me/5521999999999" target="_blank" class="inline-flex items-center justify-center bg-white text-dark font-bold text-sm tracking-wide px-8 py-4 rounded-sm transition-all hover:bg-gold hover:text-dark hover:scale-105">
+                                Agendar Diagnóstico
+                            </a>
+                            <a href="#solucoes" class="inline-flex items-center justify-center border border-white/20 text-white font-medium text-sm tracking-wide px-8 py-4 rounded-sm transition-all hover:border-gold hover:text-gold">
+                                Conheça nossas soluções
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Dashboard Ilustrado Minimalista Dark -->
+                    <div class="reveal lg:block">
+                        <div class="bg-dark-surface rounded-lg border border-ruler p-6 shadow-premium relative">
+                            <div class="flex items-center justify-between border-b border-ruler pb-4 mb-6">
+                                <div class="flex gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-white/10"></div>
+                                    <div class="w-3 h-3 rounded-full bg-white/10"></div>
+                                    <div class="w-3 h-3 rounded-full bg-white/10"></div>
+                                </div>
+                                <div class="h-2 w-24 bg-white/5 rounded"></div>
+                            </div>
+                            
+                            <div class="grid grid-cols-3 gap-4 mb-8">
+                                <div class="p-4 bg-dark rounded border border-white/5">
+                                    <div class="h-2 w-12 bg-white/20 rounded mb-2"></div>
+                                    <div class="h-4 w-20 bg-white/90 rounded"></div>
+                                </div>
+                                <div class="p-4 bg-dark rounded border border-white/5">
+                                    <div class="h-2 w-12 bg-white/20 rounded mb-2"></div>
+                                    <div class="h-4 w-16 bg-white/70 rounded"></div>
+                                </div>
+                                <div class="p-4 bg-dark rounded border border-white/5">
+                                    <div class="h-2 w-12 bg-white/20 rounded mb-2"></div>
+                                    <div class="h-4 w-24 bg-gold rounded"></div>
+                                </div>
+                            </div>
+
+                            <div class="w-full h-48 border-l border-b border-ruler flex items-end relative">
+                                <div class="absolute inset-0 flex flex-col justify-between">
+                                    <div class="border-t border-white/5 w-full"></div>
+                                    <div class="border-t border-white/5 w-full"></div>
+                                    <div class="border-t border-white/5 w-full"></div>
+                                    <div class="border-t border-white/5 w-full"></div>
+                                </div>
+                                <svg class="w-full h-full absolute inset-0" preserveAspectRatio="none" viewBox="0 0 100 100">
+                                    <path d="M0,100 C20,95 40,80 60,40 C80,10 100,5 100,5" fill="none" stroke="#52525b" stroke-width="1.5" stroke-dasharray="4 4"/>
+                                    <path d="M0,100 C25,98 45,85 55,60 L55,60" fill="none" stroke="#d4af37" stroke-width="2.5"/>
+                                    <circle cx="55" cy="60" r="3" fill="#d4af37" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Indicadores -->
+        <section class="bg-dark text-white py-10 border-t border-ruler">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 reveal">
+                <div class="flex flex-wrap justify-between items-center gap-6 text-sm font-heading tracking-widest uppercase font-bold opacity-70">
+                    <div class="flex items-center gap-2"><span class="text-2xl text-gold">31+</span> Anos de Experiência</div>
+                    <div>Naval</div>
+                    <div class="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
+                    <div>Offshore</div>
+                    <div class="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
+                    <div>Industrial</div>
+                    <div class="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
+                    <div>Construção Civil</div>
+                    <div class="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
+                    <div>IA Corporativa</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Quem Somos -->
+        <section id="quem-somos" class="py-24 lg:py-32 bg-dark-surface border-t border-ruler">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    <div class="reveal">
+                        <div class="w-12 h-0.5 bg-gold mb-6"></div>
+                        <h2 class="font-heading font-black text-3xl sm:text-4xl text-white leading-tight mb-8">
+                            Nossa fundação é a engenharia real. Nossa entrega é <span class="text-gold-fade">tecnológica.</span>
+                        </h2>
+                        <p class="text-silver/80 text-lg leading-relaxed mb-6 font-light">
+                            A WEVITRIA consolida mais de três décadas de experiência corporativa em planejamento, orçamentos, engenharia de custos, gerenciamento de projetos, administração de contratos em segmentos complexos.
+                        </p>
+                        <p class="text-silver/80 text-lg leading-relaxed mb-8 font-light">
+                            Entendemos a realidade da planta, do canteiro de obras e das concorrências pesadas. Com essa autoridade metodológica, desenvolvemos plataformas, painéis e automações que enxergam riscos antes dos gestores.
+                        </p>
+                        
+                        <div class="inline-flex items-center gap-3 px-5 py-3 border border-ruler bg-dark text-sm font-medium text-silver rounded-sm">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-gold"></i> Engineering • Project Controls • Cost Engineering • AI Solutions
+                        </div>
+                    </div>
+                    
+                    <div class="grid sm:grid-cols-2 gap-6 reveal">
+                        <div class="p-8 bg-dark border border-ruler shadow-premium transition-transform hover:-translate-y-1 hover:border-gold/30">
+                            <i data-lucide="shield-check" class="w-8 h-8 text-gold mb-4 stroke-1"></i>
+                            <h3 class="font-heading font-bold text-white text-lg mb-2">Autoridade Técnica</h3>
+                            <p class="text-silver/60 text-sm leading-relaxed">Conhecimento profundo em orçamentação e planejamento em cenários críticos.</p>
+                        </div>
+                        <div class="p-8 bg-dark border border-ruler shadow-premium transition-transform hover:-translate-y-1 hover:border-gold/30">
+                            <i data-lucide="cpu" class="w-8 h-8 text-gold mb-4 stroke-1"></i>
+                            <h3 class="font-heading font-bold text-white text-lg mb-2">Inovação Aplicada</h3>
+                            <p class="text-silver/60 text-sm leading-relaxed">Sistemas desenhados por engenheiros, para líderes de engenharia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Serviços (Grid Elegante) -->
+        <section id="servicos" class="py-24 lg:py-32 bg-dark border-t border-ruler">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="mb-16 reveal">
+                    <h2 class="font-heading font-black text-3xl sm:text-4xl text-white mb-4">Serviços</h2>
+                    <p class="text-silver/70 text-lg max-w-2xl font-light">Cobrimos o ciclo completo: do planejamento físico-financeiro à criação do software que o gerencia.</p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 reveal">
+                    <div class="group">
+                        <div class="w-10 h-10 border border-ruler bg-dark-surface rounded-sm flex items-center justify-center mb-4 transition-colors group-hover:border-gold group-hover:text-gold">
+                            <i data-lucide="calculator" class="w-5 h-5 stroke-1"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-white text-base mb-2">Engenharia de Custos</h3>
+                        <p class="text-silver/60 text-sm leading-relaxed font-light">Levantamento, análise paramétrica e rastreabilidade orçamentária rígida.</p>
+                    </div>
+                    <div class="group">
+                        <div class="w-10 h-10 border border-ruler bg-dark-surface rounded-sm flex items-center justify-center mb-4 transition-colors group-hover:border-gold group-hover:text-gold">
+                            <i data-lucide="gantt-chart" class="w-5 h-5 stroke-1"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-white text-base mb-2">Planejamento</h3>
+                        <p class="text-silver/60 text-sm leading-relaxed font-light">Cronogramas integrados, análise de caminhos críticos e nivelamento de recursos.</p>
+                    </div>
+                    <div class="group">
+                        <div class="w-10 h-10 border border-ruler bg-dark-surface rounded-sm flex items-center justify-center mb-4 transition-colors group-hover:border-gold group-hover:text-gold">
+                            <i data-lucide="bar-chart-4" class="w-5 h-5 stroke-1"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-white text-base mb-2">Project Controls</h3>
+                        <p class="text-silver/60 text-sm leading-relaxed font-light">Gerenciamento de desvios, medições de avanço e previsibilidade de prazos.</p>
+                    </div>
+                    <div class="group">
+                        <div class="w-10 h-10 border border-ruler bg-dark-surface rounded-sm flex items-center justify-center mb-4 transition-colors group-hover:border-gold group-hover:text-gold">
+                            <i data-lucide="boxes" class="w-5 h-5 stroke-1"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-white text-base mb-2">Supply Chain</h3>
+                        <p class="text-silver/60 text-sm leading-relaxed font-light">Otimização de rotas de suprimentos, equalização comercial e desenvolvimento de fornecedores.</p>
+                    </div>
+                    <div class="group">
+                        <div class="w-10 h-10 border border-ruler bg-dark-surface rounded-sm flex items-center justify-center mb-4 transition-colors group-hover:border-gold group-hover:text-gold">
+                            <i data-lucide="file-signature" class="w-5 h-5 stroke-1"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-white text-base mb-2">Contratos</h3>
+                        <p class="text-silver/60 text-sm leading-relaxed font-light">Estruturação de pleitos, administração documental e conformidade técnica.</p>
+                    </div>
+                    <div class="group">
+                        <div class="w-10 h-10 border border-ruler bg-dark-surface rounded-sm flex items-center justify-center mb-4 transition-colors group-hover:border-gold group-hover:text-gold">
+                            <i data-lucide="code-2" class="w-5 h-5 stroke-1"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-white text-base mb-2">Desenvolvimento</h3>
+                        <p class="text-silver/60 text-sm leading-relaxed font-light">Softwares sob medida e automações conectadas às regras de negócios industriais.</p>
+                    </div>
+                    <div class="group">
+                        <div class="w-10 h-10 border border-ruler bg-dark-surface rounded-sm flex items-center justify-center mb-4 transition-colors group-hover:border-gold group-hover:text-gold">
+                            <i data-lucide="pie-chart" class="w-5 h-5 stroke-1"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-white text-base mb-2">Dashboards</h3>
+                        <p class="text-silver/60 text-sm leading-relaxed font-light">BI avançado para liderança, integrando dados ERP (SAP, Totvs) em visualizações claras.</p>
+                    </div>
+                    <div class="group">
+                        <div class="w-10 h-10 border border-ruler bg-dark-surface rounded-sm flex items-center justify-center mb-4 transition-colors group-hover:border-gold group-hover:text-gold">
+                            <i data-lucide="bot" class="w-5 h-5 stroke-1"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-white text-base mb-2">IA Corporativa</h3>
+                        <p class="text-silver/60 text-sm leading-relaxed font-light">Agentes LLM customizados para triagem de editais e cruzamento de bases técnicas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Como Trabalhamos (Timeline) -->
+        <section class="py-24 lg:py-32 bg-dark-surface border-t border-ruler">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-20 reveal">
+                    <h2 class="font-heading font-black text-3xl sm:text-4xl text-white mb-4">Como Trabalhamos</h2>
+                    <p class="text-silver/70 text-lg max-w-2xl mx-auto font-light">Metodologia estruturada para garantir aderência do projeto à realidade da sua empresa.</p>
+                </div>
+
+                <div class="relative timeline-line reveal">
+                    <div class="grid md:grid-cols-5 gap-8 lg:gap-12 relative z-10 pl-12 md:pl-0">
+                        <div class="relative">
+                            <div class="w-4 h-4 bg-dark-surface rounded-full absolute -left-[54px] md:left-1/2 md:-translate-x-1/2 md:-top-5 border-4 border-ruler"></div>
+                            <span class="text-gold font-heading text-xs font-bold uppercase tracking-widest block mb-2 mt-1 md:mt-6 md:text-center">Fase 01</span>
+                            <h4 class="font-heading font-bold text-white mb-2 md:text-center">Diagnóstico</h4>
+                            <p class="text-silver/60 text-xs leading-relaxed md:text-center">Imersão nos processos atuais e identificação de gargalos de custo e prazo.</p>
+                        </div>
+                        <div class="relative">
+                            <div class="w-4 h-4 bg-gold rounded-full absolute -left-[54px] md:left-1/2 md:-translate-x-1/2 md:-top-5 shadow-[0_0_0_4px_#111111]"></div>
+                            <span class="text-gold font-heading text-xs font-bold uppercase tracking-widest block mb-2 mt-1 md:mt-6 md:text-center">Fase 02</span>
+                            <h4 class="font-heading font-bold text-white mb-2 md:text-center">Estratégia</h4>
+                            <p class="text-silver/60 text-xs leading-relaxed md:text-center">Desenho da solução arquitetural e matriz de responsabilidades e métricas.</p>
+                        </div>
+                        <div class="relative">
+                            <div class="w-4 h-4 bg-gold rounded-full absolute -left-[54px] md:left-1/2 md:-translate-x-1/2 md:-top-5 shadow-[0_0_0_4px_#111111]"></div>
+                            <span class="text-gold font-heading text-xs font-bold uppercase tracking-widest block mb-2 mt-1 md:mt-6 md:text-center">Fase 03</span>
+                            <h4 class="font-heading font-bold text-white mb-2 md:text-center">Desenvolvimento</h4>
+                            <p class="text-silver/60 text-xs leading-relaxed md:text-center">Criação das integrações de software, dashboards e modelos preditivos.</p>
+                        </div>
+                        <div class="relative">
+                            <div class="w-4 h-4 bg-gold rounded-full absolute -left-[54px] md:left-1/2 md:-translate-x-1/2 md:-top-5 shadow-[0_0_0_4px_#111111]"></div>
+                            <span class="text-gold font-heading text-xs font-bold uppercase tracking-widest block mb-2 mt-1 md:mt-6 md:text-center">Fase 04</span>
+                            <h4 class="font-heading font-bold text-white mb-2 md:text-center">Implantação</h4>
+                            <p class="text-silver/60 text-xs leading-relaxed md:text-center">Onboarding das equipes, validação de dados reais (Go-Live) em produção.</p>
+                        </div>
+                        <div class="relative">
+                            <div class="w-4 h-4 bg-gold rounded-full absolute -left-[54px] md:left-1/2 md:-translate-x-1/2 md:-top-5 shadow-[0_0_0_4px_#111111]"></div>
+                            <span class="text-gold font-heading text-xs font-bold uppercase tracking-widest block mb-2 mt-1 md:mt-6 md:text-center">Fase 05</span>
+                            <h4 class="font-heading font-bold text-white mb-2 md:text-center">Suporte</h4>
+                            <p class="text-silver/60 text-xs leading-relaxed md:text-center">Monitoramento contínuo, refinamento de algoritmos e escalabilidade técnica.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Diferenciais & 8. Segmentos -->
+        <section id="segmentos" class="py-24 lg:py-32 bg-dark text-white overflow-hidden relative border-t border-ruler">
+            <svg class="absolute top-0 right-0 w-96 h-96 text-white/5 opacity-30 -translate-y-1/2 translate-x-1/3" viewBox="0 0 100 100" fill="currentColor"><circle cx="50" cy="50" r="50"/></svg>
+            
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-20">
+                    
+                    <div class="reveal">
+                        <div class="w-12 h-0.5 bg-gold mb-6"></div>
+                        <h2 class="font-heading font-black text-3xl sm:text-4xl mb-12">Por que a VITRIA?</h2>
+                        
+                        <div class="grid sm:grid-cols-2 gap-y-8 gap-x-6">
+                            <div class="border-t border-ruler pt-4">
+                                <span class="font-heading font-bold text-sm block mb-1 text-gold">Experiência Real</span>
+                                <span class="text-silver/60 text-xs font-light">Vivência executiva em gestão corporativa.</span>
+                            </div>
+                            <div class="border-t border-ruler pt-4">
+                                <span class="font-heading font-bold text-sm block mb-1 text-gold">Integração ERP</span>
+                                <span class="text-silver/60 text-xs font-light">Consumo nativo via API de dados robustos.</span>
+                            </div>
+                            <div class="border-t border-ruler pt-4">
+                                <span class="font-heading font-bold text-sm block mb-1 text-gold">IA Direcionada</span>
+                                <span class="text-silver/60 text-xs font-light">Não é hype. É IA aplicada para economizar tempo.</span>
+                            </div>
+                            <div class="border-t border-ruler pt-4">
+                                <span class="font-heading font-bold text-sm block mb-1 text-gold">Redução de Custos</span>
+                                <span class="text-silver/60 text-xs font-light">Foco cirúrgico em margem de lucro e eficiência.</span>
+                            </div>
+                            <div class="border-t border-ruler pt-4">
+                                <span class="font-heading font-bold text-sm block mb-1 text-gold">Engenharia Base</span>
+                                <span class="text-silver/60 text-xs font-light">Aderência às normativas e realidade técnica.</span>
+                            </div>
+                            <div class="border-t border-ruler pt-4">
+                                <span class="font-heading font-bold text-sm block mb-1 text-gold">Automação de Fluxos</span>
+                                <span class="text-silver/60 text-xs font-light">Eliminação de planilhas locais não rastreáveis.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal">
+                        <h3 class="font-heading text-sm uppercase tracking-widest text-silver/40 mb-8">Setores de Atuação</h3>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-dark-panel border border-ruler p-6 rounded-sm flex flex-col justify-between aspect-square group hover:border-gold/50 transition-colors">
+                                <i data-lucide="anchor" class="w-8 h-8 text-silver/30 group-hover:text-gold stroke-1 transition-colors"></i>
+                                <span class="font-heading font-bold text-lg text-silver group-hover:text-white transition-colors mt-4">Naval</span>
+                            </div>
+                            <div class="bg-dark-panel border border-ruler p-6 rounded-sm flex flex-col justify-between aspect-square group hover:border-gold/50 transition-colors">
+                                <i data-lucide="waves" class="w-8 h-8 text-silver/30 group-hover:text-gold stroke-1 transition-colors"></i>
+                                <span class="font-heading font-bold text-lg text-silver group-hover:text-white transition-colors mt-4">Offshore</span>
+                            </div>
+                            <div class="bg-dark-panel border border-ruler p-6 rounded-sm flex flex-col justify-between aspect-[2/1] col-span-2 group hover:border-gold/50 transition-colors">
+                                <i data-lucide="factory" class="w-8 h-8 text-silver/30 group-hover:text-gold stroke-1 transition-colors"></i>
+                                <span class="font-heading font-bold text-lg text-silver group-hover:text-white transition-colors mt-4">Indústria & Infraestrutura</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Soluções Desenvolvidas -->
+        <section id="solucoes" class="py-24 lg:py-32 bg-dark-surface border-y border-ruler">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="font-heading font-black text-3xl sm:text-4xl text-white mb-4">Nossas <span class="text-gold-fade">Soluções</span></h2>
+                    <p class="text-silver/70 text-lg max-w-2xl mx-auto font-light">Plataformas maduras adaptáveis aos processos corporativos da sua empresa.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 reveal">
+                    <div class="border border-ruler bg-dark-panel p-8 sm:p-12 hover:border-gold/40 hover:shadow-premium-hover transition-all group flex flex-col h-full rounded-sm">
+                        <div class="flex justify-between items-start mb-12">
+                            <h3 class="font-heading font-black text-white text-2xl tracking-widest">ProcureFlow</h3>
+                            <i data-lucide="network" class="w-8 h-8 text-white/20 group-hover:text-gold transition-colors stroke-1"></i>
+                        </div>
+                        <p class="text-silver/70 text-sm leading-relaxed mb-8 flex-1 font-light">
+                            Aplicação customizada para automação total da cadeia de suprimentos. Gerencia desde o escopo da requisição até o roteamento para os compradores, unindo matriz de preços centralizados, histórico orçamentário e previsões de cash.
+                        </p>
+                        <a href="#contato" class="text-xs font-bold uppercase tracking-wider text-gold underline decoration-2 decoration-gold/20 hover:decoration-gold underline-offset-4 transition-all">
+                            Saiba Mais
+                        </a>
+                    </div>
+
+                    <div class="border border-ruler bg-dark-panel p-8 sm:p-12 hover:border-gold/40 hover:shadow-premium-hover transition-all group flex flex-col h-full rounded-sm">
+                        <div class="flex justify-between items-start mb-12">
+                            <h3 class="font-heading font-black text-white text-2xl tracking-widest">Cost AI</h3>
+                            <i data-lucide="database-zap" class="w-8 h-8 text-white/20 group-hover:text-gold transition-colors stroke-1"></i>
+                        </div>
+                        <p class="text-silver/70 text-sm leading-relaxed mb-8 flex-1 font-light">
+                            Inteligência de custos preditiva estruturada para ambientes de alta variação (paradas de manutenção, retrofit naval). Utiliza histórico orçamentário para projetar elasticidade de custos e validar pleitos com rigor técnico.
+                        </p>
+                        <a href="#contato" class="text-xs font-bold uppercase tracking-wider text-gold underline decoration-2 decoration-gold/20 hover:decoration-gold underline-offset-4 transition-all">
+                            Saiba Mais
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. CTA Premium -->
+        <section id="contato" class="py-32 bg-vitria-gradient relative overflow-hidden">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10 reveal">
+                <i data-lucide="building-2" class="w-12 h-12 text-white/10 mx-auto mb-8 stroke-1"></i>
+                <h2 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-8">
+                    Vamos conversar sobre os desafios do seu projeto.
+                </h2>
+                <p class="text-silver/70 text-lg sm:text-xl font-light mb-12 max-w-2xl mx-auto">
+                    Receba uma avaliação inicial sem compromisso diretamente com um consultor sênior. 
+                </p>
+                
+                <a href="https://wa.me/5521999999999" target="_blank" class="inline-flex items-center justify-center gap-3 bg-white text-dark font-bold text-sm uppercase tracking-widest px-10 py-4 rounded-sm transition-all hover:bg-gold hover:text-dark hover:scale-105">
+                    <i data-lucide="message-square" class="w-5 h-5"></i> Iniciar Contato via WhatsApp
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- 11. Footer Completo -->
+    <footer class="bg-dark text-white pt-20 pb-10 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-2 mb-6 opacity-90">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2">
+                            <path d="M3 3v18h18" />
+                            <path d="M3 16l5-5 4 4 8-8" />
+                            <path d="M15 7h5v5" />
+                        </svg>
+                        <span class="font-heading font-black text-lg tracking-widest leading-none">VITRIA</span>
+                    </div>
+                    <p class="text-silver/50 text-sm leading-relaxed font-light mb-6">
+                        Engineering • Project Controls<br>
+                        Cost Engineering • AI Solutions
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-heading font-bold text-sm mb-6 tracking-widest uppercase">Navegação</h4>
+                    <ul class="space-y-3 font-light text-sm text-silver/50">
+                        <li><a href="#home" class="hover:text-gold transition-colors">Início</a></li>
+                        <li><a href="#quem-somos" class="hover:text-gold transition-colors">Quem Somos</a></li>
+                        <li><a href="#servicos" class="hover:text-gold transition-colors">Expertise & Serviços</a></li>
+                        <li><a href="#solucoes" class="hover:text-gold transition-colors">Plataformas</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading font-bold text-sm mb-6 tracking-widest uppercase">Escritório</h4>
+                    <ul class="space-y-3 font-light text-sm text-silver/50">
+                        <li>Rio de Janeiro / RJ</li>
+                        <li>Atendimento B2B Nacional</li>
+                        <li class="pt-2">
+                            <a href="https://linkedin.com" target="_blank" class="inline-flex items-center gap-2 hover:text-gold transition-colors">
+                                <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn Page
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading font-bold text-sm mb-6 tracking-widest uppercase">Fale Conosco</h4>
+                    <ul class="space-y-3 font-light text-sm text-silver/50">
+                        <li><a href="mailto:ceo@wevitria.com.br" class="hover:text-gold transition-colors">ceo@wevitria.com.br</a></li>
+                        <li><a href="tel:+5521981051445" class="hover:text-gold transition-colors">(21) 98105-1445</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-silver/30 text-xs font-light tracking-wide">
+                <p>&copy; 2026 Wevitria. Todos os direitos reservados.</p>
+                <p>Designed for Enterprise Efficiency.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Otimizados -->
+    <script>
+        lucide.createIcons();
+
+        const btnMenu = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btnMenu.addEventListener('click', () => menu.classList.toggle('hidden'));
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => menu.classList.add('hidden'));
+        });
+
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+                header.classList.remove('py-4');
+                header.classList.add('py-3');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('header-scrolled', 'py-3');
+            }
+        });
+
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
