@@ -17,7 +17,6 @@
     <meta property="og:title" content="Wevitria | Digital Engineering Solutions">
     <meta property="og:description" content="Tecnologia e engenharia trabalhando juntas para transformar a gestão da sua empresa.">
     <meta property="og:url" content="https://www.wevitria.com.br">
-    <!-- Nota: Substitua o caminho abaixo pela URL real da sua imagem após o deploy -->
     <meta property="og:image" content="https://www.wevitria.com.br/assets/images/og-image.jpg">
     <meta property="og:locale" content="pt_BR">
 
@@ -36,47 +35,32 @@
             --blue-secondary: #3b82f6;
             --blue-dark: #0f172a;
             --blue-light: #eff6ff;
+            --blue-icon-bg: #e0f2fe;
             --gray-text: #475569;
             --gray-light: #f8fafc;
             --gray-border: #e2e8f0;
             
             --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 10px 25px -3px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 25px -3px rgba(0, 0, 0, 0.08);
             --transition: .3s ease;
             --container: 1240px;
         }
 
         /* ======================================================
-           ACESSIBILIDADE
+           ACESSIBILIDADE & RESET
         ======================================================= */
         .skip-to-content {
-            position: absolute;
-            top: -50px;
-            left: 0;
-            background: var(--blue-primary);
-            color: white;
-            padding: 8px;
-            z-index: 10000;
-            transition: top 0.2s ease;
+            position: absolute; top: -50px; left: 0; background: var(--blue-primary);
+            color: white; padding: 8px; z-index: 10000; transition: top 0.2s ease;
         }
-        .skip-to-content:focus {
-            top: 0;
-        }
-        .hidden-section {
-            display: none;
-        }
+        .skip-to-content:focus { top: 0; }
+        .hidden-section { display: none; }
 
-        /* ======================================================
-           RESET & TIPOGRAFIA
-        ======================================================= */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
-            font-family: 'Manrope', sans-serif;
-            color: var(--gray-text);
-            background-color: #ffffff;
-            line-height: 1.6;
-            overflow-x: hidden;
+            font-family: 'Manrope', sans-serif; color: var(--gray-text);
+            background-color: #ffffff; line-height: 1.6; overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
         a { color: inherit; text-decoration: none; transition: var(--transition); }
@@ -87,15 +71,20 @@
 
         h1, h2, h3, h4 { font-family: 'Exo 2', sans-serif; font-weight: 700; line-height: 1.2; }
         h1 { font-size: clamp(2.5rem, 4vw, 3.8rem); color: var(--blue-primary); margin-bottom: 20px; }
-        h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--blue-dark); }
+        h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--blue-dark); margin-bottom: 20px;}
         h3 { font-size: 1.15rem; color: var(--blue-dark); margin-bottom: 10px;}
 
+        /* Títulos de Seção com Linhas */
         .section-tag {
             display: inline-flex; align-items: center; gap: 12px; font-size: 0.8rem;
             font-weight: 800; color: var(--blue-primary); text-transform: uppercase;
             letter-spacing: 1px; margin-bottom: 16px;
         }
         .section-tag::after {
+            content: ""; display: block; width: 40px; height: 2px; background: var(--blue-primary);
+        }
+        .section-tag.center { justify-content: center; }
+        .section-tag.center::before {
             content: ""; display: block; width: 40px; height: 2px; background: var(--blue-primary);
         }
         .section-header { text-align: center; margin-bottom: 50px; display: flex; flex-direction: column; align-items: center; }
@@ -123,17 +112,20 @@
         .header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; transition: var(--transition); background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--gray-border); }
         .navbar { height: 80px; display: flex; justify-content: space-between; align-items: center; }
 
-        .logo { display: flex; align-items: center; gap: 10px; }
+        .logo { display: flex; align-items: center; gap: 10px; flex: 1; }
         .logo-mark { color: var(--blue-primary); display: flex; align-items: center; }
         .logo-mark svg { width: 45px; height: auto; }
         .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
         .logo-text strong { font-family: "Exo 2"; font-size: 22px; color: var(--blue-dark); font-weight: 700;}
         .logo-text small { color: var(--gray-text); font-size: 11px; }
 
+        .nav { flex: 2; display: flex; justify-content: center; }
         .nav ul { display: flex; gap: 28px; }
         .nav a { font-weight: 600; font-size: 0.9rem; color: var(--blue-dark); }
         .nav a:hover { color: var(--blue-primary); }
 
+        .header-action { flex: 1; display: flex; justify-content: flex-end; }
+        
         .menu-toggle { display: none; background: none; border: none; flex-direction: column; gap: 5px; cursor: pointer; }
         .menu-toggle span { display: block; width: 25px; height: 2px; background: var(--blue-dark); }
 
@@ -147,16 +139,16 @@
         .hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; }
         .hero-content p { font-size: 1.1rem; max-width: 500px; margin-bottom: 30px; }
 
-        .hero-graphic { position: relative; height: 400px; opacity: 0.7; background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M10,90 L40,10 L70,90" fill="none" stroke="%23eff6ff" stroke-width="5"/></svg>') center/contain no-repeat; }
+        .hero-graphic { position: relative; height: 450px; opacity: 0.85; background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M10,90 L40,10 L70,90" fill="none" stroke="%23eff6ff" stroke-width="8"/></svg>') center/contain no-repeat; }
 
         /* ======================================================
            HIGHLIGHTS (Barra de status)
         ======================================================= */
         .highlights { padding: 40px 24px; border-top: 1px solid var(--gray-light); border-bottom: 1px solid var(--gray-light); }
         .highlights-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
-        .highlight-item { display: flex; align-items: center; gap: 15px; flex: 1; min-width: 200px; }
+        .highlight-item { display: flex; align-items: center; gap: 15px; flex: 1; min-width: 180px; }
         .highlight-icon { color: var(--blue-primary); display: flex; align-items: center; }
-        .highlight-icon svg { width: 36px; height: 36px; }
+        .highlight-icon svg { width: 32px; height: 32px; }
         .highlight-text { display: flex; flex-direction: column; }
         .highlight-text strong { color: var(--blue-dark); font-size: 0.95rem; font-family: 'Exo 2'; }
         .highlight-text small { color: var(--blue-primary); font-size: 0.85rem; font-weight: 600; }
@@ -165,13 +157,13 @@
            QUEM SOMOS (About)
         ======================================================= */
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .about-content h2 { margin-bottom: 24px; max-width: 450px; }
+        .about-content h2 { max-width: 450px; }
         .about-content p { margin-bottom: 16px; font-size: 1rem; }
 
         .about-visual { position: relative; display: flex; justify-content: center; align-items: center; height: 400px; background: radial-gradient(circle, var(--blue-light) 0%, #fff 70%); border-radius: 20px;}
-        .network-center { width: 100px; height: 100px; background: var(--blue-primary); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-family: 'Exo 2'; font-size: 40px; font-weight: 800; box-shadow: 0 10px 30px rgba(0,86,210,0.3); z-index: 2;}
-        .network-node { position: absolute; width: 50px; height: 50px; background: var(--blue-primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; box-shadow: var(--shadow-sm); z-index: 2;}
-        .network-node svg { width: 24px; height: 24px; }
+        .network-center { width: 90px; height: 90px; background: var(--blue-primary); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-family: 'Exo 2'; font-size: 40px; font-weight: 800; box-shadow: 0 10px 30px rgba(0,86,210,0.3); z-index: 2;}
+        .network-node { position: absolute; width: 45px; height: 45px; background: var(--blue-primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; box-shadow: var(--shadow-sm); z-index: 2;}
+        .network-node svg { width: 22px; height: 22px; }
         .n1 { top: 15%; right: 25%; } .n2 { bottom: 20%; right: 20%; } .n3 { bottom: 10%; left: 30%; } .n4 { top: 30%; left: 20%; } .n5 { top: 10%; left: 45%; }
         .about-visual::before { content: ""; position: absolute; inset: 0; background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><line x1="50%" y1="50%" x2="75%" y2="15%" stroke="%233b82f6" stroke-width="1" opacity="0.3"/><line x1="50%" y1="50%" x2="80%" y2="80%" stroke="%233b82f6" stroke-width="1" opacity="0.3"/><line x1="50%" y1="50%" x2="30%" y2="90%" stroke="%233b82f6" stroke-width="1" opacity="0.3"/><line x1="50%" y1="50%" x2="20%" y2="30%" stroke="%233b82f6" stroke-width="1" opacity="0.3"/><line x1="50%" y1="50%" x2="45%" y2="10%" stroke="%233b82f6" stroke-width="1" opacity="0.3"/></svg>'); z-index: 1;}
 
@@ -180,19 +172,21 @@
         ======================================================= */
         .features { background: var(--gray-light); }
         .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-        .card { background: #fff; padding: 35px 25px; border-radius: 16px; border: 1px solid var(--gray-border); box-shadow: var(--shadow-sm); text-align: left; transition: var(--transition); }
+        .card { background: #fff; padding: 40px 25px; border-radius: 16px; border: 1px solid var(--gray-border); box-shadow: var(--shadow-sm); text-align: center; display: flex; flex-direction: column; align-items: center; transition: var(--transition); }
         .card:hover { box-shadow: var(--shadow-md); transform: translateY(-5px); }
-        .icon-box { width: 60px; height: 60px; background: var(--blue-primary); border-radius: 14px; display: flex; align-items: center; justify-content: center; color: #fff; margin-bottom: 20px; }
-        .icon-box svg { width: 28px; height: 28px; }
+        .icon-box { width: 64px; height: 64px; background: var(--blue-primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #fff; margin-bottom: 24px; }
+        .icon-box svg { width: 32px; height: 32px; }
+        .card h3 { font-size: 1.1rem; margin-bottom: 12px; }
         .card p { font-size: 0.9rem; }
 
         /* ======================================================
            SOLUÇÕES
         ======================================================= */
         .solutions-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
-        .solution-card { background: #fff; padding: 30px 20px; border-radius: 16px; border: 1px solid var(--gray-border); text-align: center; position: relative; transition: var(--transition); display: flex; flex-direction: column; align-items: center; height: 100%;}
-        .solution-card:hover { border-color: var(--blue-primary); box-shadow: var(--shadow-sm); }
-        .solution-card .icon-box { width: 50px; height: 50px; background: var(--blue-light); color: var(--blue-primary); border-radius: 12px; margin-bottom: 15px;}
+        .solution-card { background: #fff; padding: 35px 20px; border-radius: 16px; border: 1px solid var(--gray-border); text-align: center; position: relative; transition: var(--transition); display: flex; flex-direction: column; align-items: center; height: 100%;}
+        .solution-card:hover { border-color: var(--blue-primary); box-shadow: var(--shadow-md); transform: translateY(-5px); }
+        .solution-card .icon-box-light { width: 56px; height: 56px; background: var(--blue-icon-bg); color: var(--blue-primary); border-radius: 14px; display: flex; justify-content: center; align-items: center; margin-bottom: 20px;}
+        .solution-card .icon-box-light svg { width: 28px; height: 28px; }
         .solution-card h3 { font-size: 1rem; margin-bottom: 10px; }
         .solution-card p { font-size: 0.85rem; margin-bottom: 25px;}
         .solution-arrow { position: absolute; bottom: 20px; right: 20px; color: var(--blue-primary); opacity: 0; transition: var(--transition); }
@@ -201,10 +195,10 @@
         /* ======================================================
            CTA BANNER
         ======================================================= */
-        .cta { padding: 0 24px 80px; }
-        .cta-banner { background: var(--blue-primary); border-radius: 24px; padding: 40px 50px; display: flex; align-items: center; justify-content: space-between; color: #fff; gap: 30px; position: relative; overflow: hidden; }
-        .cta-icon { width: 80px; height: 80px; border: 2px dashed rgba(255,255,255,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Exo 2'; font-size: 36px; font-weight: bold; flex-shrink: 0;}
-        .cta-text { flex-grow: 1; }
+        .cta { padding: 40px 24px 80px; }
+        .cta-banner { background: var(--blue-primary); border-radius: 24px; padding: 50px 60px; display: flex; align-items: center; justify-content: space-between; color: #fff; gap: 30px; position: relative; overflow: hidden; }
+        .cta-icon { width: 80px; height: 80px; border: 2px dashed rgba(255,255,255,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Exo 2'; font-size: 36px; font-weight: bold; flex-shrink: 0;}
+        .cta-text { flex-grow: 1; text-align: left; }
         .cta-text h2 { color: #fff; margin-bottom: 8px; font-size: 1.8rem; }
         .cta-text p { color: rgba(255,255,255,0.9); font-size: 1.05rem; max-width: 600px; }
 
@@ -215,58 +209,56 @@
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.5fr 1.5fr; gap: 40px; margin-bottom: 50px; }
         .footer-logo { margin-bottom: 15px; }
         .footer-logo .logo-mark svg { width: 60px; }
-        .footer-text { font-size: 0.85rem; margin-bottom: 20px; max-width: 250px; }
+        .footer-text { font-size: 0.85rem; margin-bottom: 20px; max-width: 280px; }
         .social-icons { display: flex; gap: 15px; }
-        .social-icons a { color: var(--blue-primary); display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: var(--blue-light); transition: var(--transition); }
+        .social-icons a { color: var(--blue-primary); display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: var(--blue-icon-bg); transition: var(--transition); }
         .social-icons a:hover { background: var(--blue-primary); color: #fff; }
 
-        .footer h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; color: var(--blue-dark); }
+        .footer h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; color: var(--blue-dark); font-family: 'Exo 2', sans-serif;}
         .footer ul li { margin-bottom: 10px; }
         .footer ul a { font-size: 0.85rem; color: var(--gray-text); }
         .footer ul a:hover { color: var(--blue-primary); }
 
         .footer-contact li { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; margin-bottom: 15px; }
         .footer-contact svg { width: 18px; color: var(--blue-primary); }
-        .footer-btn { margin-top: 20px; width: 100%; justify-content: center; }
 
         .footer-bottom { text-align: center; font-size: 0.8rem; color: #94a3b8; padding-top: 20px; border-top: 1px solid var(--gray-border); }
 
         /* ======================================================
            RESPONSIVIDADE
         ======================================================= */
-        @media (max-width: 1024px) {
+        @media (max-width: 1200px) {
             .solutions-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 1024px) {
             .features-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-grid { grid-template-columns: repeat(2, 1fr); }
             .cta-banner { flex-direction: column; text-align: center; }
+            .cta-text { text-align: center; }
         }
         @media (max-width: 768px) {
             .hero-grid, .about-grid { grid-template-columns: 1fr; }
+            .hero-graphic { height: 300px; }
             
             /* Regras do Menu Mobile */
             .nav { 
-                display: none; 
-                position: absolute; 
-                top: 80px; 
-                left: 0; 
-                width: 100%; 
-                background: #fff; 
-                padding: 20px; 
-                box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); 
+                display: none; position: absolute; top: 80px; left: 0; width: 100%; 
+                background: #fff; padding: 20px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); 
             }
             .nav.active { display: block; }
-            .nav ul { flex-direction: column; gap: 15px; }
+            .nav ul { flex-direction: column; gap: 15px; text-align: center; }
             
-            .navbar > .btn { display: none; }
+            .header-action { display: none; }
             .menu-toggle { display: flex; }
+            .logo { flex: 1; justify-content: space-between; width: 100%;}
             
             .features-grid, .solutions-grid, .footer-grid { grid-template-columns: 1fr; }
+            .highlights-grid { flex-direction: column; align-items: flex-start; gap: 30px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Acessibilidade: Pular direto para o conteúdo -->
     <a href="#conteudo-principal" class="skip-to-content">Pular para o conteúdo principal</a>
 
     <!-- ==========================================================
@@ -299,10 +291,12 @@
                     </ul>
                 </nav>
 
-                <a href="#contato" class="btn btn-primary">
-                    Entre em contato
-                    <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                </a>
+                <div class="header-action">
+                    <a href="#contato" class="btn btn-primary">
+                        Entre em contato
+                        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                </div>
 
                 <button class="menu-toggle" aria-expanded="false" aria-controls="menu-navegacao" aria-label="Abrir menu">
                     <span></span><span></span><span></span>
@@ -336,7 +330,7 @@
             <div class="container highlights-grid">
                 <div class="highlight-item">
                     <div class="highlight-icon">
-                        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                     </div>
                     <div class="highlight-text">
                         <strong>Redução de custos</strong>
@@ -388,7 +382,7 @@
         <section id="quem-somos">
             <div class="container about-grid">
                 <div class="about-content">
-                    <span class="section-tag">QUEM SOMOS</span>
+                    <span class="section-tag">QUEM SOMOS &mdash;&mdash;&mdash;&mdash;</span>
                     <h2>Engenharia, pessoas e tecnologia caminhando juntas.</h2>
                     <p>A Wevitria nasceu da inquietação de quem viveu as dores dos processos de engenharia.</p>
                     <p>Conhecemos as dificuldades do planejamento, os desafios dos custos, as pressões dos cronogramas e as exigências da produção.</p>
@@ -411,29 +405,29 @@
         <section class="features" id="beneficios">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">DIFERENCIAIS</span>
+                    <span class="section-tag center">DIFERENCIAIS</span>
                     <h2>O que nos torna diferentes.</h2>
                 </div>
                 <div class="features-grid">
                     <div class="card">
                         <div class="icon-box">
-                            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
                         </div>
                         <h3>Humanização e Automatização de Processos</h3>
                         <p>Tecnologia a serviço de pessoas e objetivos reais.</p>
                     </div>
                     <div class="card">
                         <div class="icon-box">
-                            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
                         </div>
                         <h3>Inteligência Artificial aplicada ao negócio</h3>
                         <p>Decisões mais rápidas, precisas e inteligentes.</p>
                     </div>
                     <div class="card">
                         <div class="icon-box">
-                            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                         </div>
-                        <h3>Soluções criativas e práticas desenvolvidas por quem conhece obras</h3>
+                        <h3>Soluções criativas e práticas</h3>
                         <p>Experiência real que gera soluções de impacto.</p>
                     </div>
                     <div class="card">
@@ -453,42 +447,42 @@
         <section id="solucoes">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">SOLUÇÕES</span>
+                    <span class="section-tag center">SOLUÇÕES</span>
                     <h2>Tecnologia e engenharia trabalhando juntas.</h2>
                 </div>
                 <div class="solutions-grid">
                     <div class="solution-card">
-                        <div class="icon-box"><svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></div>
+                        <div class="icon-box-light"><svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></div>
                         <h3>Engenharia de Custos Digital</h3>
                         <p>Orçamentos precisos e análises inteligentes.</p>
                         <div class="solution-arrow"><svg aria-hidden="true" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></div>
                     </div>
                     <div class="solution-card">
-                        <div class="icon-box"><svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+                        <div class="icon-box-light"><svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
                         <h3>Planejamento e Project Controls</h3>
                         <p>Cronogramas confiáveis e gestão integrada.</p>
                         <div class="solution-arrow"><svg aria-hidden="true" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></div>
                     </div>
                     <div class="solution-card">
-                        <div class="icon-box"><svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"/></svg></div>
+                        <div class="icon-box-light"><svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"/></svg></div>
                         <h3>Automatização de Processos</h3>
                         <p>RPA e integrações que eliminam retrabalho.</p>
                         <div class="solution-arrow"><svg aria-hidden="true" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></div>
                     </div>
                     <div class="solution-card">
-                        <div class="icon-box"><svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
+                        <div class="icon-box-light"><svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
                         <h3>Dashboards e Inteligência de Dados</h3>
                         <p>Informações claras para decisões rápidas.</p>
                         <div class="solution-arrow"><svg aria-hidden="true" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></div>
                     </div>
                     <div class="solution-card">
-                        <div class="icon-box"><svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg></div>
+                        <div class="icon-box-light"><svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg></div>
                         <h3>Integração de Sistemas</h3>
                         <p>Conexão entre dados, processos e pessoas.</p>
                         <div class="solution-arrow"><svg aria-hidden="true" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></div>
                     </div>
                     <div class="solution-card">
-                        <div class="icon-box"><svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg></div>
+                        <div class="icon-box-light"><svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg></div>
                         <h3>Inovação e Engenharia Digital</h3>
                         <p>Tecnologias modernas aplicadas à engenharia.</p>
                         <div class="solution-arrow"><svg aria-hidden="true" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></div>
@@ -542,8 +536,9 @@
                     </div>
                     <p class="footer-text">Soluções digitais de engenharia para reduzir custos, ganhar produtividade, eliminar retrabalho, automatizar processos, acelerar decisões e integrar sistemas.</p>
                     <div class="social-icons">
-                        <a href="https://linkedin.com/company/wevitria" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da Wevitria"><svg width="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-                        <!-- Adicione os outros links das redes sociais no href="" -->
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da Wevitria"><svg width="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                        <a href="mailto:contato@wevitria.com.br" aria-label="Email da Wevitria"><svg width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
+                        <a href="#" aria-label="WhatsApp da Wevitria"><svg width="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.898-4.45 9.898-9.897 0-5.448-4.45-9.897-9.898-9.897-5.448 0-9.898 4.45-9.898 9.897 0 2.115.6 3.714 1.596 5.391l-1.054 3.848 3.96-1.036zm8.815-5.948c-.482-.242-2.85-1.408-3.292-1.57-.442-.162-.763-.242-1.085.242s-1.246 1.57-1.527 1.892c-.28.322-.56.363-1.042.12-2.127-1.065-3.69-2.502-4.95-4.664-.28-.481-.03-.742.212-.982.218-.218.482-.564.723-.846.241-.282.322-.482.482-.804.161-.322.081-.604-.04-.845-.121-.242-1.085-2.616-1.486-3.582-.39-.944-.787-.816-1.085-.83-.28-.013-.603-.016-.925-.016-.322 0-.844.12-1.285.603s-1.687 1.651-1.687 4.025c0 2.373 1.727 4.665 1.968 4.987.241.322 3.4 5.195 8.243 7.288 1.153.498 2.052.796 2.756 1.019 1.155.367 2.207.315 3.036.191.93-.14 2.85-1.164 3.25-2.291.4-1.127.4-2.091.28-2.291-.121-.202-.442-.323-.924-.564z"/></svg></a>
                     </div>
                 </div>
                 
@@ -582,7 +577,7 @@
             </div>
 
             <div class="footer-bottom">
-                &copy; 2026 Wevitria Digital Engineering Solutions. Todos os direitos reservados.
+                &copy; 2026 Wevitria Digital Engineering. Todos os direitos reservados.
             </div>
         </div>
     </footer>
@@ -591,17 +586,14 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
-            // 1. Funcionalidade do Menu Mobile
+            // Funcionalidade do Menu Mobile
             const menuToggle = document.querySelector('.menu-toggle');
             const nav = document.querySelector('.nav');
 
             if (menuToggle && nav) {
                 menuToggle.addEventListener('click', () => {
-                    // Alterna a classe visual
                     nav.classList.toggle('active');
                     menuToggle.classList.toggle('active');
-                    
-                    // Atualiza acessibilidade (leitor de tela)
                     const isExpanded = menuToggle.classList.contains('active');
                     menuToggle.setAttribute('aria-expanded', isExpanded);
                 });
