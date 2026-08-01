@@ -66,8 +66,8 @@
         a { color: inherit; text-decoration: none; transition: var(--transition); }
         ul { list-style: none; }
         img, svg { max-width: 100%; display: block; }
-        section { padding: 90px 24px; }
-        .container { width: 100%; max-width: var(--container); margin: auto; }
+        section { padding: 90px 0; }
+        .container { width: 100%; max-width: var(--container); margin: auto; padding: 0 24px; }
 
         h1, h2, h3, h4 { font-family: 'Exo 2', sans-serif; font-weight: 700; line-height: 1.2; }
         h1 { font-size: clamp(2.5rem, 4vw, 3.8rem); color: var(--blue-primary); margin-bottom: 20px; }
@@ -144,7 +144,7 @@
         /* ======================================================
            HIGHLIGHTS (Barra de status)
         ======================================================= */
-        .highlights { padding: 40px 24px; border-top: 1px solid var(--gray-light); border-bottom: 1px solid var(--gray-light); }
+        .highlights { padding: 40px 0; border-top: 1px solid var(--gray-light); border-bottom: 1px solid var(--gray-light); }
         .highlights-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
         .highlight-item { display: flex; align-items: center; gap: 15px; flex: 1; min-width: 180px; }
         .highlight-icon { color: var(--blue-primary); display: flex; align-items: center; }
@@ -195,7 +195,7 @@
         /* ======================================================
            CTA BANNER
         ======================================================= */
-        .cta { padding: 40px 24px 80px; }
+        .cta { padding: 40px 0 80px; }
         .cta-banner { background: var(--blue-primary); border-radius: 24px; padding: 50px 60px; display: flex; align-items: center; justify-content: space-between; color: #fff; gap: 30px; position: relative; overflow: hidden; }
         .cta-icon { width: 80px; height: 80px; border: 2px dashed rgba(255,255,255,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Exo 2'; font-size: 36px; font-weight: bold; flex-shrink: 0;}
         .cta-text { flex-grow: 1; text-align: left; }
@@ -205,7 +205,7 @@
         /* ======================================================
            FOOTER
         ======================================================= */
-        .footer { background: #fff; padding: 60px 24px 30px; border-top: 1px solid var(--gray-border); }
+        .footer { background: #fff; padding: 60px 0 30px; border-top: 1px solid var(--gray-border); }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.5fr 1.5fr; gap: 40px; margin-bottom: 50px; }
         .footer-logo { margin-bottom: 15px; }
         .footer-logo .logo-mark svg { width: 60px; }
@@ -268,12 +268,7 @@
         <div class="container">
             <div class="navbar">
                 <a href="#" class="logo" aria-label="Wevitria Página Inicial">
-                    <span class="logo-mark">
-                        <svg aria-hidden="true" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 10 L40 70 L55 30 L70 70 L90 10" stroke="currentColor" stroke-width="12" stroke-linejoin="round" stroke-linecap="round"/>
-                            <path d="M5 10 L25 70" stroke="#8cb4f5" stroke-width="12" stroke-linecap="round"/>
-                        </svg>
-                    </span>
+                    <img src="assets/images/logo.png" alt="Wevitria Logo" style="max-height: 50px; width: auto; margin-left: 10px;">
                     <span class="logo-text">
                         <strong>wevitria</strong>
                         <small>Digital Engineering</small>
@@ -523,12 +518,7 @@
             <div class="footer-grid">
                 <div>
                     <div class="logo footer-logo">
-                        <span class="logo-mark">
-                            <svg aria-hidden="true" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 10 L40 70 L55 30 L70 70 L90 10" stroke="currentColor" stroke-width="12" stroke-linejoin="round" stroke-linecap="round"/>
-                                <path d="M5 10 L25 70" stroke="#8cb4f5" stroke-width="12" stroke-linecap="round"/>
-                            </svg>
-                        </span>
+                        <img src="assets/images/logo.png" alt="Wevitria Logo" style="max-height: 60px; width: auto; margin-left: 10px;">
                         <span class="logo-text">
                             <strong>wevitria</strong>
                             <small>Digital Engineering</small>
