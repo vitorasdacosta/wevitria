@@ -5,7 +5,7 @@ Este repositório contém o Brand Kit da Wevitria criado para uso em assinaturas
 Conteúdo principal
 
 - /branding — Assinaturas (HTML), vCard e instruções
-- /assets/logo — Logos e favicon (SVG)
+- /assets/logo — Logos e favicon (SVG/PNG)
 - /assets/icons — Ícones SVG usados na assinatura
 - index.html — Página simples de preview /signature (adicione como necessária no site)
 
@@ -14,8 +14,8 @@ Contatos
 - Contato administrativo: admin@wevitria.com.br
 
 Deploy / Hospedagem
-- As assinaturas HTML apontam para imagens em: https://wevitria.com.br/assets/
-- Se você pretende hospedar os assets no GitHub Pages, ajuste os `src` no HTML para o domínio do Pages ou para os paths raw do GitHub.
+- As assinaturas HTML apontam para imagens em /assets/ (repo-root) — ao publicar no GitHub Pages os caminhos relativos funcionarão automaticamente.
+- Se preferir hospedar as imagens num domínio custom, atualize os `src` no HTML para o domínio desejado.
 
 Como contribuir
 - Crie uma branch a partir de `main` e abra um PR.
