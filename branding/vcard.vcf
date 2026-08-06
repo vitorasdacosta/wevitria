@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Vitor Costa
+N:Costa;Vitor;;;
+ORG:Wevitria
+TITLE:Founder | Engineering Solutions
+TEL;TYPE=WORK,VOICE:+55 21 98105-1445
+EMAIL;TYPE=PREF,INTERNET:vitor@wevitria.com.br
+URL:https://wevitria.com.br
+NOTE:Engineering • Technology • Innovation
+END:VCARD
