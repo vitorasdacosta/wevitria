@@ -8,18 +8,7 @@
     <!-- SEO & Metadados -->
     <title>Wevitria | Digital Engineering Solutions</title>
     <meta name="description" content="Soluções digitais de engenharia para reduzir custos, ganhar produtividade, eliminar retrabalho, automatizar processos e integrar sistemas.">
-    <meta name="keywords" content="engenharia digital, inteligência artificial, digitalização de processos, engenharia de custos, planejamento, wevitria">
-    <meta name="author" content="Wevitria Digital Engineering Solutions">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph (LinkedIn, WhatsApp, etc) -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Wevitria | Digital Engineering Solutions">
-    <meta property="og:description" content="Tecnologia e engenharia trabalhando juntas para transformar a gestão da sua empresa.">
-    <meta property="og:url" content="https://www.wevitria.com.br">
-    <meta property="og:image" content="https://www.wevitria.com.br/assets/images/og-image.jpg">
-    <meta property="og:locale" content="pt_BR">
-
+    
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -109,7 +98,7 @@
         /* ======================================================
            HEADER
         ======================================================= */
-        .header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; transition: var(--transition); background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px [...]
+        .header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; transition: var(--transition); background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--gray-border); }
         .navbar { height: 80px; display: flex; justify-content: space-between; align-items: center; }
 
         .logo { display: flex; align-items: center; gap: 10px; flex: 1; }
@@ -138,8 +127,8 @@
         }
         .hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; }
         .hero-content p { font-size: 1.1rem; max-width: 500px; margin-bottom: 30px; }
-
-        .hero-graphic { position: relative; height: 450px; opacity: 0.85; background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M10,90 L4[...]")
+        /* Gráfico placeholder reparado */
+        .hero-graphic { position: relative; height: 450px; opacity: 0.85; background: var(--blue-icon-bg); border-radius: 20px; }
 
         /* ======================================================
            HIGHLIGHTS (Barra de status)
@@ -160,21 +149,20 @@
         .about-content h2 { max-width: 450px; }
         .about-content p { margin-bottom: 16px; font-size: 1rem; }
 
-        .about-visual { position: relative; display: flex; justify-content: center; align-items: center; height: 400px; background: radial-gradient(circle, var(--blue-light) 0%, #fff 70%); border[...]
-        .network-center { width: 90px; height: 90px; background: var(--blue-primary); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-family: '[...]
-        .network-node { position: absolute; width: 45px; height: 45px; background: var(--blue-primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: wh[...]
+        .about-visual { position: relative; display: flex; justify-content: center; align-items: center; height: 400px; background: radial-gradient(circle, var(--blue-light) 0%, #fff 70%); border-radius: 50%; }
+        .network-center { width: 90px; height: 90px; background: var(--blue-primary); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-family: 'Exo 2', sans-serif; font-size: 2rem; }
+        .network-node { position: absolute; width: 45px; height: 45px; background: var(--blue-primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; }
         .network-node svg { width: 22px; height: 22px; }
         .n1 { top: 15%; right: 25%; } .n2 { bottom: 20%; right: 20%; } .n3 { bottom: 10%; left: 30%; } .n4 { top: 30%; left: 20%; } .n5 { top: 10%; left: 45%; }
-        .about-visual::before { content: ""; position: absolute; inset: 0; background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><line x1="50[...]")
 
         /* ======================================================
            DIFERENCIAIS
         ======================================================= */
         .features { background: var(--gray-light); }
         .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-        .card { background: #fff; padding: 40px 25px; border-radius: 16px; border: 1px solid var(--gray-border); box-shadow: var(--shadow-sm); text-align: center; display: flex; flex-direction: c[...]
+        .card { background: #fff; padding: 40px 25px; border-radius: 16px; border: 1px solid var(--gray-border); box-shadow: var(--shadow-sm); text-align: center; display: flex; flex-direction: column; align-items: center; }
         .card:hover { box-shadow: var(--shadow-md); transform: translateY(-5px); }
-        .icon-box { width: 64px; height: 64px; background: var(--blue-primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #fff; margin-bottom: 24px;[...]
+        .icon-box { width: 64px; height: 64px; background: var(--blue-primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #fff; margin-bottom: 24px; }
         .icon-box svg { width: 32px; height: 32px; }
         .card h3 { font-size: 1.1rem; margin-bottom: 12px; }
         .card p { font-size: 0.9rem; }
@@ -183,9 +171,9 @@
            SOLUÇÕES
         ======================================================= */
         .solutions-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
-        .solution-card { background: #fff; padding: 35px 20px; border-radius: 16px; border: 1px solid var(--gray-border); text-align: center; position: relative; transition: var(--transition); di[...]
+        .solution-card { background: #fff; padding: 35px 20px; border-radius: 16px; border: 1px solid var(--gray-border); text-align: center; position: relative; transition: var(--transition); display: flex; flex-direction: column; align-items: center;}
         .solution-card:hover { border-color: var(--blue-primary); box-shadow: var(--shadow-md); transform: translateY(-5px); }
-        .solution-card .icon-box-light { width: 56px; height: 56px; background: var(--blue-icon-bg); color: var(--blue-primary); border-radius: 14px; display: flex; justify-content: center; align[...]
+        .solution-card .icon-box-light { width: 56px; height: 56px; background: var(--blue-icon-bg); color: var(--blue-primary); border-radius: 14px; display: flex; justify-content: center; align-items: center; margin-bottom: 20px; }
         .solution-card .icon-box-light svg { width: 28px; height: 28px; }
         .solution-card h3 { font-size: 1rem; margin-bottom: 10px; }
         .solution-card p { font-size: 0.85rem; margin-bottom: 25px;}
@@ -196,8 +184,8 @@
            CTA BANNER
         ======================================================= */
         .cta { padding: 40px 0 80px; }
-        .cta-banner { background: var(--blue-primary); border-radius: 24px; padding: 50px 60px; display: flex; align-items: center; justify-content: space-between; color: #fff; gap: 30px; positio[...]
-        .cta-icon { width: 80px; height: 80px; border: 2px dashed rgba(255,255,255,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Exo 2'; fon[...]
+        .cta-banner { background: var(--blue-primary); border-radius: 24px; padding: 50px 60px; display: flex; align-items: center; justify-content: space-between; color: #fff; gap: 30px; position: relative; overflow: hidden; }
+        .cta-icon { width: 80px; height: 80px; border: 2px dashed rgba(255,255,255,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Exo 2'; font-size: 2rem; }
         .cta-text { flex-grow: 1; text-align: left; }
         .cta-text h2 { color: #fff; margin-bottom: 8px; font-size: 1.8rem; }
         .cta-text p { color: rgba(255,255,255,0.9); font-size: 1.05rem; max-width: 600px; }
@@ -211,7 +199,7 @@
         .footer-logo .logo-mark svg { width: 60px; }
         .footer-text { font-size: 0.85rem; margin-bottom: 20px; max-width: 280px; }
         .social-icons { display: flex; gap: 15px; }
-        .social-icons a { color: var(--blue-primary); display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: var(--blue-icon-bg); [...]
+        .social-icons a { color: var(--blue-primary); display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: var(--blue-icon-bg); transition: var(--transition); }
         .social-icons a:hover { background: var(--blue-primary); color: #fff; }
 
         .footer h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; color: var(--blue-dark); font-family: 'Exo 2', sans-serif;}
@@ -268,7 +256,7 @@
         <div class="container">
             <div class="navbar">
                 <a href="#" class="logo" aria-label="Wevitria Página Inicial">
-                    <img src="assets/images/logo.png" alt="Wevitria Logo" style="max-height: 50px; width: auto; margin-left: 10px;">
+                    <!-- Logo image placeholder: re-add sua logo real se necessário -->
                     <span class="logo-text">
                         <strong>wevitria</strong>
                         <small>Digital Engineering</small>
@@ -289,7 +277,6 @@
                 <div class="header-action">
                     <a href="#contato" class="btn btn-primary">
                         Entre em contato
-                        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                     </a>
                 </div>
 
@@ -311,7 +298,6 @@
                     <p>Transformamos. Digitalizamos. Aceleramos seus processos e decisões utilizando engenharia digital, inteligência artificial e tecnologia aplicada ao seu negócio.</p>
                     <a href="#contato" class="btn btn-primary">
                         Entre em contato
-                        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                     </a>
                 </div>
                 <div class="hero-graphic" aria-hidden="true"></div>
@@ -324,45 +310,30 @@
         <div class="highlights">
             <div class="container highlights-grid">
                 <div class="highlight-item">
-                    <div class="highlight-icon">
-                        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-[...]"/></svg>
-                    </div>
                     <div class="highlight-text">
                         <strong>Redução de custos</strong>
                         <small>até 30%</small>
                     </div>
                 </div>
                 <div class="highlight-item">
-                    <div class="highlight-icon">
-                        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8[...]"/></svg>
-                    </div>
                     <div class="highlight-text">
                         <strong>Ganho de produtividade</strong>
                         <small>até 40%</small>
                     </div>
                 </div>
                 <div class="highlight-item">
-                    <div class="highlight-icon">
-                        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 [...]"/></svg>
-                    </div>
                     <div class="highlight-text">
                         <strong>Tempo de resposta mais ágil</strong>
                         <small>até 60%</small>
                     </div>
                 </div>
                 <div class="highlight-item">
-                    <div class="highlight-icon">
-                        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 [...]"/></svg>
-                    </div>
                     <div class="highlight-text">
                         <strong>Precisão nas decisões</strong>
                         <small>+ assertividade</small>
                     </div>
                 </div>
                 <div class="highlight-item">
-                    <div class="highlight-icon">
-                        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0[...]"/></svg>
-                    </div>
                     <div class="highlight-text">
                         <strong>Sistemas integrados</strong>
                         <small>+ eficiência</small>
@@ -385,11 +356,6 @@
                 </div>
                 <div class="about-visual" aria-hidden="true">
                     <div class="network-center">W</div>
-                    <div class="network-node n1"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 [...]"></svg></div>
-                    <div class="network-node n2"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2[...]"></svg></div>
-                    <div class="network-node n3"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21[...]"></svg></div>
-                    <div class="network-node n4"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c[...]"></svg></div>
-                    <div class="network-node n5"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h[...]"></svg></div>
                 </div>
             </div>
         </section>
@@ -405,30 +371,18 @@
                 </div>
                 <div class="features-grid">
                     <div class="card">
-                        <div class="icon-box">
-                            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 [...]"></svg>
-                        </div>
                         <h3>Humanização e Digitalização de Processos</h3>
                         <p>Tecnologia a serviço de pessoas e objetivos reais.</p>
                     </div>
                     <div class="card">
-                        <div class="icon-box">
-                            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M[...]"></svg>
-                        </div>
                         <h3>Inteligência Artificial aplicada ao negócio</h3>
                         <p>Decisões mais rápidas, precisas e inteligentes.</p>
                     </div>
                     <div class="card">
-                        <div class="icon-box">
-                            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.[...]"></svg>
-                        </div>
                         <h3>Soluções criativas e práticas</h3>
                         <p>Experiência real que gera soluções de impacto.</p>
                     </div>
                     <div class="card">
-                        <div class="icon-box">
-                            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a[...]"></svg>
-                        </div>
                         <h3>Economia de tempo e redução de custos</h3>
                         <p>Mais eficiência, menos desperdícios, melhores resultados.</p>
                     </div>
@@ -447,40 +401,28 @@
                 </div>
                 <div class="solutions-grid">
                     <div class="solution-card">
-                        <div class="icon-box-light"><svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [...]"></svg></div>
                         <h3>Engenharia de Custos Digital</h3>
                         <p>Orçamentos precisos e análises inteligentes.</p>
-                        <div class="solution-arrow"><svg aria-hidden="true" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejo[...]></svg></div>
                     </div>
                     <div class="solution-card">
-                        <div class="icon-box-light"><svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [...]"></svg></div>
                         <h3>Planejamento e Project Controls</h3>
                         <p>Cronogramas confiáveis e gestão integrada.</p>
-                        <div class="solution-arrow"><svg aria-hidden="true" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejo[...]></svg></div>
                     </div>
                     <div class="solution-card">
-                        <div class="icon-box-light"><svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [...]"></svg></div>
                         <h3>Automatização de Processos</h3>
                         <p>RPA e integrações que eliminam retrabalho.</p>
-                        <div class="solution-arrow"><svg aria-hidden="true" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejo[...]></svg></div>
                     </div>
                     <div class="solution-card">
-                        <div class="icon-box-light"><svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [...]"></svg></div>
                         <h3>Dashboards e Inteligência de Dados</h3>
                         <p>Informações claras para decisões rápidas.</p>
-                        <div class="solution-arrow"><svg aria-hidden="true" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejo[...]></svg></div>
                     </div>
                     <div class="solution-card">
-                        <div class="icon-box-light"><svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [...]"></svg></div>
                         <h3>Integração de Sistemas</h3>
                         <p>Conexão entre dados, processos e pessoas.</p>
-                        <div class="solution-arrow"><svg aria-hidden="true" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejo[...]></svg></div>
                     </div>
                     <div class="solution-card">
-                        <div class="icon-box-light"><svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [...]"></svg></div>
                         <h3>Inovação e Engenharia Digital</h3>
                         <p>Tecnologias modernas aplicadas à engenharia.</p>
-                        <div class="solution-arrow"><svg aria-hidden="true" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejo[...]></svg></div>
                     </div>
                 </div>
             </div>
@@ -503,7 +445,6 @@
                     </div>
                     <button class="btn btn-white">
                         Entre em contato
-                        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                     </button>
                 </div>
             </div>
@@ -518,18 +459,12 @@
             <div class="footer-grid">
                 <div>
                     <div class="logo footer-logo">
-                        <img src="assets/images/logo.png" alt="Wevitria Logo" style="max-height: 60px; width: auto; margin-left: 10px;">
                         <span class="logo-text">
                             <strong>wevitria</strong>
                             <small>Digital Engineering</small>
                         </span>
                     </div>
                     <p class="footer-text">Soluções digitais para redução de custos, ganho de produtividade, mitigação de riscos e assertividade na tomada de decisões.</p>
-                    <div class="social-icons">
-                        <a href="https://www.linkedin.com/company/wevitria/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da Wevitria" title="LinkedIn da Wevitria"><svg width="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0[...]"></svg></a>
-                        <a href="mailto:contato@wevitria.com.br" aria-label="Email da Wevitria" title="Enviar email para Wevitria"><svg width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 [...]"></svg></a>
-                        <a href="https://wa.me/5521920012910" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Wevitria" title="Abrir conversa no WhatsApp"><svg width="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.00[...]"></svg></a>
-                    </div>
                 </div>
                 
                 <div>
@@ -553,15 +488,6 @@
                         <li><a href="#solucoes">Dashboards e Dados</a></li>
                         <li><a href="#solucoes">Integração de Sistemas</a></li>
                         <li><a href="#solucoes">Inovação e Engenharia Digital</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4>Contato</h4>
-                    <ul class="footer-contact">
-                        <li><svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28[...]"></svg></li>
-                        <li><svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2[...]"></svg></li>
-                        <li><svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L1[...]"></svg></li>
                     </ul>
                 </div>
             </div>
