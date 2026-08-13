@@ -21,19 +21,13 @@
 
     nav.classList.toggle('open', nextOpen);
     nav.setAttribute('aria-hidden', String(isMobile ? !nextOpen : false));
-
-    // Prevent keyboard/assistive-technology focus from entering a hidden mobile menu.
     nav.inert = isMobile && !nextOpen;
 
-    if (moveFocus && nextOpen) {
-      firstNavLink()?.focus();
-    }
+    if (moveFocus && nextOpen) firstNavLink()?.focus();
   };
 
   updateHeader();
   window.addEventListener('scroll', updateHeader, { passive: true });
-
-  // Establish the correct initial state for desktop/mobile.
   setMenuState(false);
 
   menuButton?.addEventListener('click', () => {
@@ -58,9 +52,7 @@
     }
   });
 
-  mobileQuery.addEventListener?.('change', () => {
-    setMenuState(false);
-  });
+  mobileQuery.addEventListener?.('change', () => setMenuState(false));
 
   const reveal = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
@@ -81,19 +73,18 @@
   form?.addEventListener('submit', event => {
     event.preventDefault();
 
+    const status = document.getElementById('form-status');
     const consent = document.getElementById('privacy-consent');
-    if (consent && !consent.checked) {
-      consent.focus();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
       return;
     }
 
-    const captcha = form.querySelector('.g-recaptcha');
-    if (captcha && typeof window.grecaptcha !== 'undefined') {
-      const response = window.grecaptcha.getResponse();
-      if (!response) {
-        captcha.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        return;
-      }
+    if (consent && !consent.checked) {
+      consent.focus();
+      if (status) status.textContent = 'Aceite a Política de Privacidade para continuar.';
+      return;
     }
 
     const nome = document.getElementById('nome')?.value.trim() ?? '';
@@ -109,8 +100,9 @@
       `Qual o meu desafio:\n${desafio}`;
 
     const url =
-      `https://api.whatsapp.com/send?phone=5521981051445&text=${encodeURIComponent(text)}`;
+      `https://api.whatsapp.com/send?phone=5521920012910&text=${encodeURIComponent(text)}`;
 
+    if (status) status.textContent = 'Abrindo o WhatsApp para concluir o envio...';
     window.open(url, '_blank', 'noopener,noreferrer');
   });
 })();
