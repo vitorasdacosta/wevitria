@@ -21,13 +21,19 @@
 
     nav.classList.toggle('open', nextOpen);
     nav.setAttribute('aria-hidden', String(isMobile ? !nextOpen : false));
+
+    // Prevent keyboard/assistive-technology focus from entering a hidden mobile menu.
     nav.inert = isMobile && !nextOpen;
 
-    if (moveFocus && nextOpen) firstNavLink()?.focus();
+    if (moveFocus && nextOpen) {
+      firstNavLink()?.focus();
+    }
   };
 
   updateHeader();
   window.addEventListener('scroll', updateHeader, { passive: true });
+
+  // Establish the correct initial state for desktop/mobile.
   setMenuState(false);
 
   menuButton?.addEventListener('click', () => {
@@ -52,7 +58,9 @@
     }
   });
 
-  mobileQuery.addEventListener?.('change', () => setMenuState(false));
+  mobileQuery.addEventListener?.('change', () => {
+    setMenuState(false);
+  });
 
   const reveal = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
@@ -64,28 +72,18 @@
         }
       });
     }, { threshold: 0.12 });
-    reveal.forEach(el => observer.observe(el));
-  } else {
-    reveal.forEach(el => el.classList.add('visible'));
+    // Content is visible by default (see CSS). Only now, once we know JS
+    // and IntersectionObserver both work, do we opt elements into the
+    // hidden/animate-in state - so a script failure never hides content.
+    reveal.forEach(el => {
+      el.classList.add('pending');
+      observer.observe(el);
+    });
   }
 
   const form = document.getElementById('lead-form');
   form?.addEventListener('submit', event => {
     event.preventDefault();
-
-    const status = document.getElementById('form-status');
-    const consent = document.getElementById('privacy-consent');
-
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-
-    if (consent && !consent.checked) {
-      consent.focus();
-      if (status) status.textContent = 'Aceite a Política de Privacidade para continuar.';
-      return;
-    }
 
     const nome = document.getElementById('nome')?.value.trim() ?? '';
     const whatsapp = document.getElementById('whatsapp')?.value.trim() ?? '';
@@ -102,7 +100,6 @@
     const url =
       `https://api.whatsapp.com/send?phone=5521920012910&text=${encodeURIComponent(text)}`;
 
-    if (status) status.textContent = 'Abrindo o WhatsApp para concluir o envio...';
     window.open(url, '_blank', 'noopener,noreferrer');
   });
 })();
