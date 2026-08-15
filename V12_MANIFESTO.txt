@@ -1,0 +1,70 @@
+WEVITRIA — V12
+
+Base: V11.5 entregue pelo usuário.
+
+CORREÇÃO CRÍTICA (causa real da página "quebrada"):
+- Praticamente todo o conteúdo da página usava a classe .reveal, que no CSS
+  começava com opacity:0 e SÓ ficava visível se o JavaScript (IntersectionObserver)
+  rodasse com sucesso. Em qualquer cenário onde o JS falhe, seja bloqueado,
+  tenha erro, ou rode em um motor mais antigo, a página inteira ficava
+  praticamente em branco. Confirmado por teste de renderização.
+- Corrigido invertendo a lógica: o conteúdo agora é visível por padrão
+  (opacity:1 no CSS). O JavaScript, quando funciona, é que ADICIONA a classe
+  .pending para then animar a entrada. Uma falha de script nunca mais
+  esconde conteúdo.
+
+Ajustes feitos nesta versão (a partir da imagem de referência e da lista de
+pontos verificados):
+1. reCAPTCHA removido (placeholder YOUR_RECAPTCHA_SITE_KEY eliminado, script
+   do Google removido do <head>, checagem removida do app.js).
+2. Checkbox de consentimento removido do formulário (não aparecia na imagem
+   de referência); substituído por uma nota curta com link para a Política
+   de Privacidade, mantendo a referência à LGPD sem fricção visual extra.
+3. Número de telefone e WhatsApp unificados em todo o site (header, footer,
+   painel de contato, JSON-LD, app.js) para +55 (21) 92001-2910.
+4. Painel de contato azul ("Pronto para transformar sua empresa?") agora
+   exibe telefone/WhatsApp e e-mail, igual à imagem de referência — esse
+   bloco já existia no CSS (.contact-links) mas não estava no HTML da V11.5.
+5. Limpeza de CSS morto da V11.4 que não correspondia a nenhum elemento
+   atual: .node/.node-1..5 (rede antiga, substituída por .network-node/
+   .node-uniao etc. na V11.5), .services-band, .services-list, .service-pill.
+6. Corrigidas as dimensões declaradas do og:image (estavam como 1024x1024;
+   o arquivo hero.webp real é 545x375).
+
+Preservado (verificado, ao contrário do que constava em uma das análises
+recebidas):
+- privacidade.html, robots.txt e sitemap.xml já existiam no pacote da V11.5
+  e foram apenas copiados — não estavam faltando.
+- Os 5 ícones da rede "Quem Somos" (União, Pessoas, IA, Gráficos, Resultados)
+  já existiam como SVG completos e corretamente posicionados sobre os
+  conectores — não há truncamento nem ausência de ícones.
+- manifest.json (PWA) não foi adicionado: esta é uma landing page estática,
+  não um app instalável, então um manifest de PWA não se aplica aqui.
+
+PENDÊNCIA — imagem do hero:
+A imagem de referência do topo (hero) mostra um notebook com renderização 3D
+de um navio/FPSO e painéis de dashboard — essa MESMA imagem foi enviada por
+você depois e usada na seção "Quem Somos" (ver abaixo). O hero.webp da V11.5
+(o "W" azul) segue como está por enquanto; se quiser essa mesma foto (ou
+outra) no hero também, é só enviar.
+
+ATUALIZAÇÃO — seção "Quem Somos":
+- A imagem enviada (notebook com o navio 3D e os dashboards) substituiu o
+  diagrama de rede abstrato dessa seção.
+- Os 5 selos (União, Pessoas, IA, Gráficos, Resultados) foram mantidos,
+  agora flutuando ao redor da foto nas mesmas posições radiais que antes
+  apontavam para as linhas do diagrama — para não perder o significado dos
+  5 pilares e para "conversar" visualmente com o restante da página (mesmo
+  estilo de card flutuante usado no resto do site).
+- Corrigido `inset:0`/`inset:18px` (shorthand CSS) para a forma explícita
+  (top/left/right/bottom) nos elementos dessa seção. Todos os navegadores
+  atuais suportam `inset`, mas a forma explícita tem compatibilidade ainda
+  mais ampla — troca de baixo risco, sem efeito colateral.
+- Novo asset: assets/quem-somos.webp (convertido do PNG enviado).
+
+Observação:
+- O reCAPTCHA foi removido por instrução explícita. Sem ele, o formulário
+  fica mais simples mas sem proteção anti-spam. Se isso for necessário no
+  futuro, recomenda-se reintroduzir com uma Site Key real (nunca placeholder)
+  e validação do token no servidor.
+
