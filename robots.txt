@@ -2,7 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://wevitria.com.br/sitemap.xml
-User-agent: *
-Allow: /
-
-Sitemap: https://wevitria.com.br/sitemap.xml
