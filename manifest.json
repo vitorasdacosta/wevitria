@@ -1,0 +1,27 @@
+{
+  "name": "Wevitria | Digital Engineering",
+  "short_name": "Wevitria",
+  "description": "Soluções digitais para engenharia, dados e inteligência artificial aplicados ao negócio.",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#066DE0",
+  "icons": [
+    {
+      "src": "/assets/images/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
