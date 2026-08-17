@@ -3,7 +3,9 @@
   const menuButton = document.getElementById('menu-toggle');
   const nav = document.getElementById('main-nav');
 
-  const mobileQuery = window.matchMedia('(max-width: 1000px)');
+  // Header V12: only phones/tablets below 760px use the hamburger menu.
+  // Tablets from 761px keep the full navigation visible.
+  const mobileQuery = window.matchMedia('(max-width: 760px)');
   const firstNavLink = () => nav?.querySelector('a');
 
   const updateHeader = () => {
@@ -72,9 +74,6 @@
         }
       });
     }, { threshold: 0.12 });
-    // Content is visible by default (see CSS). Only now, once we know JS
-    // and IntersectionObserver both work, do we opt elements into the
-    // hidden/animate-in state - so a script failure never hides content.
     reveal.forEach(el => {
       el.classList.add('pending');
       observer.observe(el);
