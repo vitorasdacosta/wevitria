@@ -3,8 +3,12 @@
   const menuButton = document.getElementById('menu-toggle');
   const nav = document.getElementById('main-nav');
 
-  // Header V12: only phones/tablets below 760px use the hamburger menu.
-  // Tablets from 761px keep the full navigation visible.
+  // Mobile navigation: keep the three main links visible directly in the header.
+  const mobileNavStyles = document.createElement('link');
+  mobileNavStyles.rel = 'stylesheet';
+  mobileNavStyles.href = 'assets/css/mobile-nav.css';
+  document.head.appendChild(mobileNavStyles);
+
   const mobileQuery = window.matchMedia('(max-width: 760px)');
   const firstNavLink = () => nav?.querySelector('a');
 
@@ -13,19 +17,28 @@
   };
 
   const setMenuState = (open, { moveFocus = false } = {}) => {
-    if (!menuButton || !nav) return;
+    if (!nav) return;
 
     const isMobile = mobileQuery.matches;
-    const nextOpen = isMobile ? Boolean(open) : false;
 
-    menuButton.setAttribute('aria-expanded', String(nextOpen));
-    menuButton.setAttribute('aria-label', nextOpen ? 'Fechar menu' : 'Abrir menu');
+    // On mobile the navigation is always visible; the hamburger is not used.
+    if (isMobile) {
+      menuButton?.setAttribute('aria-expanded', 'false');
+      menuButton?.setAttribute('aria-label', 'Menu de navegação');
+      nav.classList.remove('open');
+      nav.setAttribute('aria-hidden', 'false');
+      nav.inert = false;
+      return;
+    }
+
+    const nextOpen = Boolean(open);
+
+    menuButton?.setAttribute('aria-expanded', String(nextOpen));
+    menuButton?.setAttribute('aria-label', nextOpen ? 'Fechar menu' : 'Abrir menu');
 
     nav.classList.toggle('open', nextOpen);
-    nav.setAttribute('aria-hidden', String(isMobile ? !nextOpen : false));
-
-    // Prevent keyboard/assistive-technology focus from entering a hidden mobile menu.
-    nav.inert = isMobile && !nextOpen;
+    nav.setAttribute('aria-hidden', 'false');
+    nav.inert = false;
 
     if (moveFocus && nextOpen) {
       firstNavLink()?.focus();
@@ -39,21 +52,21 @@
   setMenuState(false);
 
   menuButton?.addEventListener('click', () => {
+    if (mobileQuery.matches) return;
     const open = menuButton.getAttribute('aria-expanded') === 'true';
     setMenuState(!open, { moveFocus: !open });
   });
 
   nav?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      if (mobileQuery.matches) {
+      if (!mobileQuery.matches) {
         setMenuState(false);
-        menuButton?.focus();
       }
     });
   });
 
   document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && mobileQuery.matches &&
+    if (event.key === 'Escape' && !mobileQuery.matches &&
         menuButton?.getAttribute('aria-expanded') === 'true') {
       setMenuState(false);
       menuButton?.focus();
