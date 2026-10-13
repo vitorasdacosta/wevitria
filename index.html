@@ -1,31 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#066DE0">
-  <meta name="description" content="Wevitria — soluções digitais para engenharia, dados e inteligência artificial aplicados ao negócio.">
-  <meta property="og:title" content="Wevitria | Digital Engineering">
-  <meta property="og:description" content="Engenharia, pessoas e tecnologia caminhando juntas.">
+  <meta name="description" content="Wevitria — Consultoria para Projetos de Engenharia, Suprimentos e Finanças, com soluções analíticas e Inteligência Artificial aplicada.">
+  <meta property="og:title" content="Wevitria | Consultoria para Projetos de Engenharia, Suprimentos e Finanças">
+  <meta property="og:description" content="Previsibilidade, eficiência e inteligência analítica em custos, suprimentos estratégicos e gestão financeira. Mais de R$ 600M em histórico de gestão.">
   <meta property="og:type" content="website">
-  <title>wevitria | Digital Engineering</title>
+  <title>Wevitria | Consultoria para Projetos de Engenharia, Suprimentos e Finanças</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="canonical" href="https://wevitria.com.br/">
   <meta name="robots" content="index, follow">
-  <link rel="icon" href="assets/images/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
-  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="https://wevitria.com.br/assets/images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://wevitria.com.br/assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="https://wevitria.com.br/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="https://wevitria.com.br/manifest.json">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:url" content="https://wevitria.com.br/">
   <meta property="og:image" content="https://wevitria.com.br/assets/images/hero.webp">
-  <meta property="og:image:alt" content="Wevitria — Digital Engineering">
+  <meta property="og:image:alt" content="Wevitria — Consultoria para Projetos de Engenharia, Suprimentos e Finanças">
   <meta property="og:image:type" content="image/webp">
   <meta property="og:image:width" content="545">
   <meta property="og:image:height" content="375">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Wevitria | Digital Engineering">
-  <meta name="twitter:description" content="Soluções digitais de engenharia e tecnologia para seu negócio.">
+  <meta name="twitter:title" content="Wevitria | Consultoria para Projetos de Engenharia, Suprimentos e Finanças">
+  <meta name="twitter:description" content="Consultoria especializada em Engenharia, Suprimentos, Finanças Corporativas e Inteligência Artificial Aplicada.">
   <meta name="twitter:image" content="https://wevitria.com.br/assets/images/hero.webp">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCBYRP9P56"></script>
@@ -54,73 +54,455 @@
     }]
   }
   </script>
+  <link rel="stylesheet" href="assets/css/mobile-nav.css">
+
+  <style>
+    /* Estilos refinados no design system da Opção B */
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(6, 109, 224, 0.18);
+    }
+    .proof-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .proof-num {
+      font-size: 1.55rem;
+      font-weight: 850;
+      color: var(--blue);
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+    }
+    .proof-lbl {
+      font-size: 0.72rem;
+      font-weight: 750;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    /* Cards da Seção Soluções com a linguagem de design da Opção B */
+    .services-grid-opb {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 28px;
+    }
+    .service-card-opb {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 26px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .service-card-opb:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(6, 37, 95, 0.08);
+      border-color: #bad8fc;
+    }
+    .service-tag-opb {
+      font-size: 0.68rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+    .service-card-opb h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.25;
+    }
+    .service-card-opb p {
+      font-size: 0.88rem;
+      color: #53688e;
+      line-height: 1.6;
+    }
+    .service-list-opb {
+      list-style: none;
+      padding: 0;
+      margin: 6px 0 0;
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .service-list-opb li {
+      font-size: 0.82rem;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .service-list-opb li::before {
+      content: "✓";
+      color: var(--blue);
+      font-weight: 800;
+    }
+    .service-badge-opb {
+      display: inline-flex;
+      align-self: flex-start;
+      margin-top: auto;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--soft);
+      border: 1px solid #d9e8fb;
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: #174780;
+    }
+
+    /* Cases com borda superior e badges refinadas */
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .case-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .case-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+      border-color: #abcffb;
+    }
+    .case-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+    }
+    .case-tag {
+      font-size: 0.66rem;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--blue);
+    }
+    .case-card h3 {
+      font-size: 1.06rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+    .case-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .case-badge {
+      display: inline-flex;
+      align-self: flex-start;
+      margin-top: auto;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--soft);
+      border: 1px solid #d9e8fb;
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: #174780;
+    }
+
+    @media (max-width: 900px) {
+      .proof-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .services-grid-opb {
+        grid-template-columns: 1fr;
+      }
+      .cases-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .proof-strip {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .cases-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
-  <header class="site-header" id="main-header">
+  <header class="site-header scrolled" id="main-header">
     <div class="container header-inner">
       <a class="brand" href="#topo" aria-label="wevitria — início">
         <img src="assets/images/logo.webp" alt="Logo Wevitria" width="647" height="764" decoding="async">
         <span class="brand-copy"><strong>wevitria</strong><span>Digital Engineering</span></span>
       </a>
-      <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+      <nav class="main-nav" id="main-nav" aria-label="Navegação principal" aria-hidden="false">
         <ul>
           <li><a href="#solucoes">Soluções</a></li>
+          <li><a href="#cases">Cases</a></li>
           <li><a href="#quem-somos">Quem Somos</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
       <div class="header-contact" aria-label="Contatos">
-        <a href="tel:+5521920012910" title="Telefone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 5.2 2 2 0 0 1 4.11 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 10.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>+55 (21) 92001-2910</a>
-        <a href="https://api.whatsapp.com/send?phone=5521920012910&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" rel="noopener noreferrer" title="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M20 11.5a8.5 8.5 0 0 1-12.8 7.37L3 20l1.18-4.07A8.5 8.5 0 1 1 20 11.5Z"/><path d="M8.7 7.8c.2-.45.42-.46.78-.46h.5c.18 0 .4.08.5.38l.65 1.55c.1.23.06.42-.08.6l-.45.55c-.12.15-.2.3-.08.52.2.38.7 1.13 1.45 1.82.87.8 1.6 1.05 1.95 1.2.22.1.35.08.48-.08l.7-.83c.14-.17.32-.2.55-.1l1.47.7c.24.12.4.18.46.3.06.12.06.67-.16 1.13-.22.46-1.04.88-1.44.94-.37.06-.85.09-1.38-.08-.32-.1-.73-.24-1.25-.48-2.2-.95-3.64-3.1-3.75-3.25-.1-.14-.9-1.2-.9-2.3 0-1.1.56-1.64.8-1.89Z"/></svg>WhatsApp</a>
-        <a href="mailto:contato@wevitria.com.br" title="E-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m22 6-10 7L2 6"/></svg>contato@wevitria.com.br</a>
+        <a href="tel:+5521920012910" title="Telefone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 5.2 2 2 0 0 1 4.11 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 10.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"></path></svg>+55 (21) 92001-2910
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=5521920012910&amp;text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" rel="noopener noreferrer" title="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M20 11.5a8.5 8.5 0 0 1-12.8 7.37L3 20l1.18-4.07A8.5 8.5 0 1 1 20 11.5Z"></path><path d="M8.7 7.8c.2-.45.42-.46.78-.46h.5c.18 0 .4.08.5.38l.65 1.55c.1.23.06.42-.08.6l-.45.55c-.12.15-.2.3-.08.52.2.38.7 1.13 1.45 1.82.87.8 1.6 1.05 1.95 1.2.22.1.35.08.48-.08l.7-.83c.14-.17.32-.2.55-.1l1.47.7c.24.12.4.18.46.3.06.12.06.67-.16 1.13-.22.46-1.04.88-1.44.94-.37.06-.85.09-1.38-.08-.32-.1-.73-.24-1.25-.48-2.2-.95-3.64-3.1-3.75-3.25-.1-.14-.9-1.2-.9-2.3 0-1.1.56-1.64.8-1.89Z"></path></svg>WhatsApp
+        </a>
+        <a href="mailto:contato@wevitria.com.br" title="E-mail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"></path><path d="m22 6-10 7L2 6"></path></svg>contato@wevitria.com.br
+        </a>
       </div>
-      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
     </div>
   </header>
+
   <main id="conteudo">
+    <!-- HERO SECTION -->
     <section class="hero" id="topo">
       <div class="container hero-grid">
-        <div class="hero-copy reveal">
+        <div class="hero-copy reveal pending visible">
           <h1>A transformação digital que sua empresa <span class="accent">merece.</span></h1>
-          <p class="hero-lead">Na Wevitria, não desenvolvemos softwares genéricos. Criamos soluções digitais sob medida para empresas que enfrentam a complexidade de gerenciar projetos, analisar orçamentos técnicos e otimizar processos.</p>
-          <p class="hero-lead">Nossa grande vantagem competitiva é a ponte entre o domínio prático da engenharia e a tecnologia de ponta.</p>
-          <div class="hero-actions"><a class="btn btn-primary" href="#contato">Entre em contato <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-outline" href="#solucoes">Conheça as soluções</a></div>
+          <p class="hero-lead">Na Wevitria, não desenvolvemos softwares genéricos. Oferecemos <strong>Consultoria para Projetos de Engenharia, Suprimentos e Finanças</strong>, criando soluções digitais e análises sob medida para empresas que buscam eficiência, controle e decisões precisas.</p>
+          <p class="hero-lead">Nossa grande vantagem competitiva é a ponte entre mais de 30 anos de domínio prático da engenharia e a tecnologia de ponta, gerando previsibilidade, resultados tangíveis e foco contínuo em qualidade.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contato">Fale com um consultor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+            <a class="btn btn-outline" href="#cases">Conheça nossos Cases</a>
+          </div>
+
+          <!-- Barra de Métricas Integrada (Opção B) -->
+          <div class="proof-strip">
+            <div class="proof-cell">
+              <span class="proof-num">+R$ 600M</span>
+              <span class="proof-lbl">Em Histórico de Gestão</span>
+            </div>
+            <div class="proof-cell">
+              <span class="proof-num">11% a 15%</span>
+              <span class="proof-lbl">Saving Médio Comprovado</span>
+            </div>
+            <div class="proof-cell">
+              <span class="proof-num">30+ Anos</span>
+              <span class="proof-lbl">Bagagem Multidisciplinar</span>
+            </div>
+            <div class="proof-cell">
+              <span class="proof-num">100% Remoto</span>
+              <span class="proof-lbl">Atendimento Consultivo</span>
+            </div>
+          </div>
         </div>
-        <div class="hero-visual reveal" aria-label="Visual tecnológico Wevitria"><img src="assets/images/hero.webp" alt="Visual tecnológico da Wevitria com a marca, dados e indicador 99,9%" loading="eager" width="1024" height="1024"></div>
+        <div class="hero-visual reveal pending visible" aria-label="Visual tecnológico Wevitria">
+          <img src="assets/images/hero.webp" alt="Visual tecnológico da Wevitria com a marca, dados e indicador 99,9%" loading="eager" width="1024" height="1024">
+        </div>
       </div>
     </section>
+
+    <!-- QUEM SOMOS SECTION -->
     <section class="section" id="quem-somos">
-      <div class="container about-grid">
-        <div class="about-copy reveal">
-          <div class="section-heading"><span class="eyebrow">Quem somos</span><h2>Desenvolvendo soluções digitais em engenharia e tecnologia para seu negócio.</h2></div>
-          <p class="lead">A Wevitria nasceu da inquietação de quem viveu as dores dos processos de engenharia.</p>
-          <p>Conhecemos as dificuldades do planejamento, os desafios dos custos, as pressões dos cronogramas e as exigências da produção. Por isso interpretamos e criamos soluções digitais, ágeis e de impacto que tornam a gestão mais simples, fluida e eficiente.</p>
-        </div>
-        <div class="about-visual reveal" aria-label="Wevitria aplicando engenharia e inteligência artificial">
-          <div class="about-photo"><img src="assets/images/quem-somos.webp" alt="Soluções digitais da Wevitria para engenharia, dados e inteligência artificial" width="1536" height="733" loading="lazy" decoding="async"></div>
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-copy reveal pending visible">
+            <div class="section-heading"><span class="eyebrow">Quem somos</span><h2>Unindo o rigor da engenharia, finanças e tecnologia aplicada.</h2></div>
+            <p class="lead">A Wevitria nasceu da experiência prática acumulada na liderança de projetos, compras técnicas e controladoria.</p>
+            <p>Conhecemos na pele as dores reais do planejamento, a complexidade da equalização de propostas, os desafios da formação de custos e a pressão por prazos. Oferecemos assessoria consultiva personalizada e soluções ágeis com Inteligência Artificial, proporcionando clareza analítica, segurança em contratos e decisões precisas para empresas que buscam eficiência operacional sustentável.</p>
+          </div>
+          <div class="about-visual reveal pending visible" aria-label="Wevitria aplicando engenharia e inteligência artificial">
+            <div class="about-photo"><img src="assets/images/quem-somos.webp" alt="Soluções digitais da Wevitria para engenharia, dados e inteligência artificial" width="1536" height="733" loading="lazy" decoding="async"></div>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- SOLUÇÕES: CONSULTORIA PARA PROJETOS DE ENGENHARIA, SUPRIMENTOS E FINANÇAS -->
     <section class="section" id="solucoes">
       <div class="container">
-        <div class="section-heading center reveal"><span class="eyebrow">Soluções</span><h2>Tecnologia e engenharia trabalhando juntas.</h2><p>Do dado ao processo, do processo à decisão: soluções digitais pensadas para a realidade da engenharia.</p></div>
-        <div class="solution-grid solution-grid-integrated">
-          <article class="solution-card reveal"><span class="number">01 / CUSTOS</span><h3>Engenharia de Custos Digital</h3><p>Orçamentos precisos e análises inteligentes.</p><span class="solution-service">Orçamentos Técnicos</span></article>
-          <article class="solution-card reveal"><span class="number">02 / PLANEJAMENTO</span><h3>Planejamento e Project Controls</h3><p>Cronogramas confiáveis e gestão integrada.</p><span class="solution-service">Planejamento e PCP · Project Controls</span></article>
-          <article class="solution-card reveal"><span class="number">03 / DADOS</span><h3>Dashboards e Inteligência de Dados</h3><p>Informações claras para decisões rápidas.</p><span class="solution-service">Soluções Digitais</span></article>
-          <article class="solution-card reveal"><span class="number">04 / DIGITAL</span><h3>Inovação e Engenharia Digital</h3><p>Tecnologias modernas aplicadas à engenharia.</p><span class="solution-service">Soluções Digitais</span></article>
+        <div class="section-heading center reveal pending visible">
+          <span class="eyebrow">Soluções</span>
+          <h2>Consultoria para Projetos de Engenharia, Suprimentos e Finanças</h2>
+          <p>Serviços estruturados sob medida para dar previsibilidade orçamentária, transparência e eficiência aos seus projetos.</p>
+        </div>
+
+        <div class="services-grid-opb">
+          <!-- 01 / CUSTOS & ORÇAMENTOS -->
+          <article class="service-card-opb reveal pending visible">
+            <span class="service-tag-opb">01 / CUSTOS & ORÇAMENTOS</span>
+            <h3>Auditoria e Saneamento de Orçamentos CAPEX/OPEX</h3>
+            <p>Revisão analítica profunda de planilhas orçamentárias e composições de custos antes da contratação e início dos serviços, identificando desvios e assegurando consistência aos investimentos.</p>
+            <ul class="service-list-opb">
+              <li>Curva ABC e Total Cost of Ownership (TCO)</li>
+              <li>Análise de Composições de Custos Unitários (CPUs)</li>
+              <li>Saneamento e equalização orçamentária pré-obra</li>
+            </ul>
+            <span class="service-badge-opb">Orçamentos Analíticos</span>
+          </article>
+
+          <!-- 02 / SUPRIMENTOS & RFX -->
+          <article class="service-card-opb reveal pending visible">
+            <span class="service-tag-opb">02 / SUPRIMENTOS & RFX</span>
+            <h3>Equalização Técnico-Comercial & Gestão de RFx</h3>
+            <p>Estruturação de concorrências e matrizes comparativas detalhadas para contratações embasadas em custo real e menor risco executivo, garantindo total clareza entre propostas.</p>
+            <ul class="service-list-opb">
+              <li>Desmonte analítico de custos, BDI e encargos</li>
+              <li>Equalização de escopos técnicos multidisciplinares</li>
+              <li>Negociação estratégica e prevenção de aditivos futuros</li>
+            </ul>
+            <span class="service-badge-opb">Strategic Sourcing & RFx</span>
+          </article>
+
+          <!-- 03 / CONTRATOS & FINANÇAS -->
+          <article class="service-card-opb reveal pending visible">
+            <span class="service-tag-opb">03 / CONTRATOS & FINANÇAS</span>
+            <h3>Governança Físico-Financeira & Apoio em Pleitos (Claims)</h3>
+            <p>Acompanhamento integrado de medições de avanço físico e assessoria técnica na recomposição de custos reais para fundamentar ou contestar reequilíbrios econômico-financeiros.</p>
+            <ul class="service-list-opb">
+              <li>Conciliação entre avanço físico medido e realizado</li>
+              <li>Elaboração de dossiês técnicos de reequilíbrio econômico</li>
+              <li>Governança e administração financeira de contratos</li>
+            </ul>
+            <span class="service-badge-opb">Project Controls & Contratos</span>
+          </article>
+
+          <!-- 04 / INTELIGÊNCIA ARTIFICIAL -->
+          <article class="service-card-opb reveal pending visible">
+            <span class="service-tag-opb">04 / INTELIGÊNCIA ARTIFICIAL</span>
+            <h3>Aceleração de Engenharia & Automação com IA</h3>
+            <p>Implantação de rotinas inteligentes e engenharia de prompts para acelerar diagnósticos documentais, automatizar análises de editais técnicos e consolidar relatórios executivos.</p>
+            <ul class="service-list-opb">
+              <li>Diagnóstico ágil de editais e termos de referência</li>
+              <li>Dashboards gerenciais e modelagem preditiva</li>
+              <li>Redução drástica do esforço operacional em análises</li>
+            </ul>
+            <span class="service-badge-opb">Soluções com IA Aplicada</span>
+          </article>
         </div>
       </div>
     </section>
+
+    <!-- CASES E PORTFÓLIO DE PESO (OPÇÃO B COM BADGES) -->
+    <section class="section soft" id="cases" style="background-color: #f8fafc; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+      <div class="container">
+        <div class="section-heading center reveal pending visible">
+          <span class="eyebrow">Cases</span>
+          <h2>Experiência Comprovada em Grandes Projetos</h2>
+          <p>Bagagem construída na gestão de contratos, custos e suprimentos de empreendimentos de alta relevância nacional.</p>
+        </div>
+        <div class="cases-grid">
+          <article class="case-card reveal pending visible">
+            <span class="case-tag">Óleo & Gás / Offshore</span>
+            <h3>FPSOs P-58 e P-62 (Petrobras)</h3>
+            <p>Negociações internacionais de USD 34M para topsides, caldeiraria pesada, estruturas e equipamentos críticos de processo com fornecedores globais.</p>
+            <span class="case-badge">Módulos Topsides • Petrobras</span>
+          </article>
+          <article class="case-card reveal pending visible">
+            <span class="case-tag">Energia & Termelétricas</span>
+            <h3>UTE GNA II (Porto do Açu)</h3>
+            <p>Governança orçamentária e gestão de contratos de construção civil e montagem eletromecânica sob carteira de R$ 50M para geração de energia de alta capacidade.</p>
+            <span class="case-badge">Gestão Contratual • R$ 50M</span>
+          </article>
+          <article class="case-card reveal pending visible">
+            <span class="case-tag">Infraestrutura Comercial</span>
+            <h3>Retrofit & Expansão (brMalls / ALLOS)</h3>
+            <p>Concorrências nacionais em sistemas críticos (HVAC/Chillers, elevadores, combate a incêndio), gerindo spend de R$ 132M com 11% a 15% de saving médio comprovado.</p>
+            <span class="case-badge">Spend R$ 132M • Saving 11%-15%</span>
+          </article>
+          <article class="case-card reveal pending visible">
+            <span class="case-tag">Indústria Naval & Infraestrutura</span>
+            <h3>24 Embarcações Offshore & UTG Sul Capixaba</h3>
+            <p>Gestão de suprimentos e pacotes internacionais para construção naval e contratação de 21 prédios industriais e utilidades da Unidade de Tratamento de Gás.</p>
+            <span class="case-badge">24 Embarcações • 21 Prédios</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO SECTION -->
     <section class="section contact-section" id="contato">
       <div class="container contact-shell">
-        <div class="contact-panel reveal"><h2>Pronto para transformar sua empresa?</h2><p>Vamos conversar sobre como podemos simplificar, digitalizar e impulsionar seus resultados.</p><div class="contact-links"><a href="https://api.whatsapp.com/send?phone=5521920012910&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M20 11.5a8.5 8.5 0 0 1-12.8 7.37L3 20l1.18-4.07A8.5 8.5 0 1 1 20 11.5Z"/><path d="M8.7 7.8c.2-.45.42-.46.78-.46h.5c.18 0 .4.08.5.38l.65 1.55c.1.23.06.42-.08.6l-.45.55c-.12.15-.2.3-.08.52.2.38.7 1.13 1.45 1.82.87.8 1.6 1.05 1.95 1.2.22.1.35.08.48-.08l.7-.83c.14-.17.32-.2.55-.1l1.47.7c.24.12.4.18.46.3.06.12.06.67-.16 1.13-.22.46-1.04.88-1.44.94-.37.06-.85.09-1.38-.08-.32-.1-.73-.24-1.25-.48-2.2-.95-3.64-3.1-3.75-3.25-.1-.14-.9-1.2-.9-2.3 0-1.1.56-1.64.8-1.89Z"/></svg>(21) 92001-2910</a><a href="mailto:contato@wevitria.com.br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m22 6-10 7L2 6"/></svg>contato@wevitria.com.br</a></div></div>
-        <div class="form-panel reveal"><h3>Envie sua mensagem</h3><form id="lead-form"><div class="form-grid"><div class="field"><label for="nome">Nome</label><input id="nome" name="nome" type="text" placeholder="Seu nome" autocomplete="name" required></div><div class="field"><label for="whatsapp">WhatsApp</label><input id="whatsapp" name="whatsapp" type="tel" placeholder="(21) 99999-9999" autocomplete="tel" required></div><div class="field full"><label for="email">E-mail</label><input id="email" name="email" type="email" placeholder="seu@email.com" autocomplete="email" required></div><div class="field full"><label for="desafio">Qual o seu desafio?</label><textarea id="desafio" name="desafio" placeholder="Conte brevemente o que sua empresa precisa resolver." required></textarea></div></div><button class="btn btn-primary form-submit" type="submit">Enviar via WhatsApp</button><p class="form-note">Seus dados são usados apenas para o primeiro contato. <a href="privacidade.html">Política de Privacidade</a>.</p><noscript><p class="form-fallback">O envio automático depende do JavaScript. <a href="https://api.whatsapp.com/send?phone=5521920012910&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" rel="noopener noreferrer">Abrir WhatsApp</a></p></noscript></form></div>
+        <div class="contact-panel reveal pending visible">
+          <h2>Pronto para transformar sua empresa?</h2>
+          <p>Vamos conversar sobre como a Wevitria pode trazer previsibilidade orçamentária, otimização de processos e eficiência para seus projetos e operações.</p>
+          <div class="contact-links">
+            <a href="https://api.whatsapp.com/send?phone=5521920012910&amp;text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M20 11.5a8.5 8.5 0 0 1-12.8 7.37L3 20l1.18-4.07A8.5 8.5 0 1 1 20 11.5Z"></path><path d="M8.7 7.8c.2-.45.42-.46.78-.46h.5c.18 0 .4.08.5.38l.65 1.55c.1.23.06.42-.08.6l-.45.55c-.12.15-.2.3-.08.52.2.38.7 1.13 1.45 1.82.87.8 1.6 1.05 1.95 1.2.22.1.35.08.48-.08l.7-.83c.14-.17.32-.2.55-.1l1.47.7c.24.12.4.18.46.3.06.12.06.67-.16 1.13-.22.46-1.04.88-1.44.94-.37.06-.85.09-1.38-.08-.32-.1-.73-.24-1.25-.48-2.2-.95-3.64-3.1-3.75-3.25-.1-.14-.9-1.2-.9-2.3 0-1.1.56-1.64.8-1.89Z"></path></svg>(21) 92001-2910
+            </a>
+            <a href="mailto:contato@wevitria.com.br">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"></path><path d="m22 6-10 7L2 6"></path></svg>contato@wevitria.com.br
+            </a>
+          </div>
+        </div>
+        <div class="form-panel reveal pending visible">
+          <h3>Envie sua mensagem</h3>
+          <form id="lead-form">
+            <div class="form-grid">
+              <div class="field"><label for="nome">Nome</label><input id="nome" name="nome" type="text" placeholder="Seu nome" autocomplete="name" required=""></div>
+              <div class="field"><label for="whatsapp">WhatsApp</label><input id="whatsapp" name="whatsapp" type="tel" placeholder="(21) 99999-9999" autocomplete="tel" required=""></div>
+              <div class="field full"><label for="email">E-mail</label><input id="email" name="email" type="email" placeholder="seu@email.com" autocomplete="email" required=""></div>
+              <div class="field full"><label for="desafio">Qual o seu desafio?</label><textarea id="desafio" name="desafio" placeholder="Conte brevemente o que sua empresa precisa resolver." required=""></textarea></div>
+            </div>
+            <button class="btn btn-primary form-submit" type="submit">Enviar via WhatsApp</button>
+            <p class="form-note">Seus dados são usados apenas para o primeiro contato. <a href="https://wevitria.com.br/privacidade.html">Política de Privacidade</a>.</p>
+            <noscript><p class="form-fallback">O envio automático depende do JavaScript. <a href="https://api.whatsapp.com/send?phone=5521920012910&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" rel="noopener noreferrer">Abrir WhatsApp</a></p></noscript>
+          </form>
+        </div>
       </div>
     </section>
   </main>
-  <footer class="site-footer"><div class="container"><div class="footer-grid"><div><a class="footer-brand" href="#topo"><img src="assets/images/logo.webp" alt="Logo Wevitria" width="647" height="764" decoding="async"><span class="footer-brand-copy"><strong>wevitria</strong><small>Digital Engineering</small></span></a><p class="footer-copy">Desenvolvemos soluções com inteligência artificial para redução de custos, ganho de produtividade e modernização de processos para decisões ágeis e precisas.</p></div><div class="footer-col"><h4>Navegação</h4><ul><li><a href="#solucoes">Soluções</a></li><li><a href="#quem-somos">Quem Somos</a></li><li><a href="#contato">Contato</a></li></ul></div><div class="footer-col footer-contact-icons"><h4>Conecte-se</h4><div class="footer-icons"><a href="tel:+5521920012910" aria-label="Telefone" title="Telefone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 5.2 2 2 0 0 1 4.11 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 10.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg></a><a href="https://api.whatsapp.com/send?phone=5521920012910&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M20 11.5a8.5 8.5 0 0 1-12.8 7.37L3 20l1.18-4.07A8.5 8.5 0 1 1 20 11.5Z"/><path d="M8.7 7.8c.2-.45.42-.46.78-.46h.5c.18 0 .4.08.5.38l.65 1.55c.1.23.06.42-.08.6l-.45.55c-.12.15-.2.3-.08.52l-.45.55c-.12.15-.2.3-.08.52.2.38.7 1.13 1.45 1.82.87.8 1.6 1.05 1.95 1.2.22.1.35.08.48-.08l.7-.83c.14-.17.32-.2.55-.1l1.47.7c.24.12.4.18.46.3.06.12.06.67-.16 1.13-.22.46-1.04.88-1.44.94-.37.06-.85.09-1.38-.08-.32-.1-.73-.24-1.25-.48-2.2-.95-3.64-3.1-3.75-3.25-.1-.14-.9-1.2-.9-2.3 0-1.1.56-1.64.8-1.89Z"/></svg></a><a href="mailto:contato@wevitria.com.br" aria-label="E-mail" title="E-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m22 6-10 7L2 6"/></svg></a><a href="https://www.linkedin.com/company/wevitria/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M5 4.5A2.5 2.5 0 1 1 0 4.5a2.5 2.5 0 0 1 5 0ZM.5 9h4V21h-4zM8 9h3.8v1.64h.05C12.38 9.7 13.75 8.5 16 8.5c4.2 0 5 2.75 5 6.32V21h-4v-5.48c0-1.31-.03-3-1.82-3-1.82 0-2.1 1.42-2.1 2.9V21H9.08V9Z"/></svg></a></div></div></div><div class="footer-bottom"><span>© 2026 Wevitria Digital Engineering. Todos os direitos reservados.</span><span>Rio de Janeiro – RJ, Brasil</span></div></div></footer>
-  <script src="assets/js/app.js" defer></script>
+
+  <!-- FOOTER SECTION -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="footer-brand" href="#topo">
+            <img src="assets/images/logo.webp" alt="Logo Wevitria" width="647" height="764" decoding="async">
+            <span class="footer-brand-copy"><strong>wevitria</strong><small>Digital Engineering</small></span>
+          </a>
+          <p class="footer-copy">Consultoria e soluções digitais com inteligência artificial para otimização de processos, engenharia de custos, suprimentos e finanças corporativas, proporcionando decisões ágeis e precisas.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#solucoes">Soluções</a></li>
+            <li><a href="#cases">Cases</a></li>
+            <li><a href="#quem-somos">Quem Somos</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-contact-icons">
+          <h4>Conecte-se</h4>
+          <div class="footer-icons">
+            <a href="tel:+5521920012910" aria-label="Telefone" title="Telefone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 5.2 2 2 0 0 1 4.11 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 10.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"></path></svg></a>
+            <a href="https://api.whatsapp.com/send?phone=5521920012910&amp;text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M20 11.5a8.5 8.5 0 0 1-12.8 7.37L3 20l1.18-4.07A8.5 8.5 0 1 1 20 11.5Z"></path><path d="M8.7 7.8c.2-.45.42-.46.78-.46h.5c.18 0 .4.08.5.38l.65 1.55c.1.23.06.42-.08.6l-.45.55c-.12.15-.2.3-.08.52.2.38.7 1.13 1.45 1.82.87.8 1.6 1.05 1.95 1.2.22.1.35.08.48-.08l.7-.83c.14-.17.32-.2.55-.1l1.47.7c.24.12.4.18.46.3.06.12.06.67-.16 1.13-.22.46-1.04.88-1.44.94-.37.06-.85.09-1.38-.08-.32-.1-.73-.24-1.25-.48-2.2-.95-3.64-3.1-3.75-3.25-.1-.14-.9-1.2-.9-2.3 0-1.1.56-1.64.8-1.89Z"></path></svg></a>
+            <a href="mailto:contato@wevitria.com.br" aria-label="E-mail" title="E-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"></path><path d="m22 6-10 7L2 6"></path></svg></a>
+            <a href="https://www.linkedin.com/company/wevitria/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M5 4.5A2.5 2.5 0 1 1 0 4.5a2.5 2.5 0 0 1 5 0ZM.5 9h4V21h-4zM8 9h3.8v1.64h.05C12.38 9.7 13.75 8.5 16 8.5c4.2 0 5 2.75 5 6.32V21h-4v-5.48c0-1.31-.03-3-1.82-3-1.82 0-2.1 1.42-2.1 2.9V21H9.08V9Z"></path></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Wevitria Digital Engineering. Todos os direitos reservados.</span>
+        <span>Rio de Janeiro – RJ, Brasil</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js" defer=""></script>
 </body>
 </html>
