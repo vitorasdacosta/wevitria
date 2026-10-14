@@ -1,0 +1,95 @@
+/* Wevitria — mobile navigation: links visible directly in the header */
+@media (max-width: 760px) {
+  .site-header { height: 70px; }
+  .header-inner {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 6px;
+  }
+  .brand {
+    min-width: 0;
+    gap: 5px;
+    flex-shrink: 0;
+  }
+  .brand img {
+    width: 34px;
+    height: 34px;
+  }
+  .brand-copy strong {
+    font-size: 1.02rem;
+    white-space: nowrap;
+  }
+  .brand-copy span,
+  .header-contact,
+  .menu-toggle {
+    display: none !important;
+  }
+  .main-nav {
+    position: static;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    background: transparent;
+    backdrop-filter: none;
+    transform: none !important;
+    transition: none;
+    overflow: visible;
+    padding: 0;
+    z-index: auto;
+  }
+  .main-nav.open { transform: none !important; }
+  .main-nav ul {
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    list-style: none;
+    white-space: nowrap;
+  }
+  .main-nav li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  .main-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    padding: 0 4px;
+    border-bottom: 0;
+    border-radius: 7px;
+    font-size: .62rem;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .main-nav li + li::before {
+    content: "•";
+    display: inline-block;
+    color: #b7c9e2;
+    font-size: .48rem;
+    line-height: 1;
+    margin: 0 1px;
+  }
+}
+
+@media (max-width: 380px) {
+  .header-inner { gap: 4px; }
+  .brand img { width: 31px; height: 31px; }
+  .brand-copy strong { font-size: .94rem; }
+  .main-nav a {
+    padding-inline: 2px;
+    font-size: .57rem;
+  }
+  .main-nav li + li::before {
+    margin: 0;
+    font-size: .43rem;
+  }
+}
