@@ -31,5 +31,5 @@ Links definidos:
 - Telefone: tel:+5521920012910
 - WhatsApp: https://api.whatsapp.com/send?phone=5521981051445
 - E-mail: mailto:contato@wevitria.com.br
-- LinkedIn: https://www.linkedin.com/company/wevitria/?viewAsMember=true
+- LinkedIn: https://www.linkedin.com/company/wevitria/
 
